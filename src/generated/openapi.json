@@ -1,0 +1,169 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "react-maker のサイト のデータAPI",
+    "version": "5"
+  },
+  "paths": {
+    "/datasets/data1": {
+      "get": {
+        "summary": "商品の一覧",
+        "operationId": "listData1",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 500,
+              "default": 30
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "name",
+                "price",
+                "image"
+              ]
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "default": "asc"
+            }
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "style": "deepObject",
+            "explode": true,
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "description": "filter[項目]=値（完全一致）"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "一覧",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "records",
+                    "total"
+                  ],
+                  "properties": {
+                    "records": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Data1"
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "失敗（画面は「要素の状態表示」の失敗を出し、再試行できる）"
+          }
+        }
+      }
+    },
+    "/datasets/data1/{id}": {
+      "get": {
+        "summary": "商品の1件",
+        "operationId": "getData1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "1件",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data1"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "見つからない"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Data1": {
+        "type": "object",
+        "description": "商品",
+        "required": [
+          "id",
+          "name",
+          "price"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "description": "商品名（必須）"
+          },
+          "price": {
+            "type": "number",
+            "minimum": 0,
+            "description": "価格（必須）"
+          },
+          "image": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri-reference",
+            "description": "画像（任意）"
+          }
+        }
+      }
+    }
+  }
+}

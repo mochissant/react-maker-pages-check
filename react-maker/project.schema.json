@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mochissant/react-maker/schema/project.schema.json",
+  "title": "react-maker のプロジェクト",
+  "description": "src/generated/project.json（書き出したリポジトリ）と、編集用バックアップの project の形。エージェントはこの形を守って直接書き換え、`npm run check:project` で確かめる（Issue #116）。参照の整合（遷移先の画面・トークン・共通部品）はスキーマでは表せないので、検証コマンドが確かめる。",
+  "type": "object",
+  "required": ["id", "screens", "designSystem"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "exportOptions": { "type": ["object", "null"], "properties": { "shadcn": { "type": "boolean" }, "storybook": { "type": "boolean" } } },
+    "librarySources": { "type": "object", "required": ["disabled", "custom"], "properties": { "disabled": { "type": "array", "uniqueItems": true, "maxItems": 200, "items": { "type": "string" } }, "custom": { "type": "array", "maxItems": 100, "items": { "type": "object", "required": ["id", "name", "source", "indexUrl", "itemUrl", "license", "licenseUrl", "checkedAt", "dependencies"], "properties": { "id": { "type": "string", "pattern": "^user-[a-zA-Z0-9-]+$" }, "name": { "type": "string", "minLength": 1, "maxLength": 100 }, "source": { "type": "string", "pattern": "^https://" }, "indexUrl": { "type": "string", "pattern": "^https://" }, "itemUrl": { "type": "string", "pattern": "^https://" }, "license": { "type": "string" }, "licenseUrl": { "type": "string" }, "checkedAt": { "type": "string" }, "dependencies": { "type": "string", "maxLength": 1000 } } } } } },
+    "revision": { "type": "integer", "minimum": 0 },
+    "schemaVersion": { "type": "integer" },
+    "startScreenId": { "type": ["string", "null"], "description": "最初に開く画面の id" },
+    "seo": { "type": ["object", "null"], "properties": { "notFoundScreenId": { "type": "string", "minLength": 1 } } },
+    "locales": { "description": "多言語（Issue #182）：基準言語と、足した言語", "type": ["object", "null"], "required": ["base", "others"], "properties": { "base": { "type": "string" }, "baseName": { "type": "string" }, "others": { "type": "array", "items": { "type": "object", "required": ["code", "name"], "properties": { "code": { "type": "string" }, "name": { "type": "string" } } } } } },
+    "screens": { "type": "array", "items": { "$ref": "#/$defs/screen" } },
+    "designSystem": { "$ref": "#/$defs/designSystem" },
+    "breakpoints": { "type": "array", "items": { "type": "object", "required": ["id", "minWidth"], "properties": { "id": { "type": "string" }, "name": { "type": "string" }, "minWidth": { "type": "integer", "minimum": 1 } } } },
+    "datasets": { "type": "array", "items": { "type": "object", "required": ["id", "name", "fields", "records"] } },
+    "background": { "$ref": "#/$defs/background" },
+    "contentMaxWidth": { "type": "integer", "minimum": 1 },
+    "fonts": { "type": "array" },
+    "assets": { "type": "array", "items": { "type": "object", "required": ["id"] } },
+    "siteIcons": {
+      "type": "object", "required": ["sourceId", "fit", "transparent", "backgroundColor", "themeColor", "shortName", "images"],
+      "properties": {
+        "sourceId": { "type": "string", "minLength": 1 }, "fit": { "enum": ["contain", "cover"] }, "transparent": { "type": "boolean" },
+        "backgroundColor": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" }, "themeColor": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" }, "shortName": { "type": "string" },
+        "images": { "type": "array", "minItems": 5, "maxItems": 5, "items": { "type": "object", "required": ["size", "assetId"], "properties": { "size": { "enum": [16, 32, 180, 192, 512] }, "assetId": { "type": "string", "minLength": 1 } } } }
+      }
+    },
+    "icons": { "type": "array" },
+    "motionPresets": { "type": "array", "description": "案件で足した動きのプリセット（擬態語の辞書に加わる）", "items": { "$ref": "#/$defs/motionPreset" } },
+    "codeComponents": { "type": "array", "items": { "type": "object", "required": ["id", "codeName", "source"], "properties": { "id": { "type": "string", "pattern": "^code-" }, "codeName": { "type": "string", "pattern": "^[A-Z][A-Za-z0-9]*$" }, "source": { "type": "string" } } } },
+    "sectionTemplates": { "type": "array", "items": { "type": "object", "required": ["id", "name", "element"], "properties": { "element": { "$ref": "#/$defs/element" } } } },
+    "elementClasses": { "type": "object", "description": "書き出し時に生成する。手で直さない（GUIで保存し直すと作り直す）" },
+    "elementSignatures": { "type": "object", "description": "書き出し時に生成する。スタイルを直接書き換えた要素は、クラスではなく描画時のスタイルで表示される" }
+  },
+  "$defs": {
+    "control": { "type": "object", "additionalProperties": false, "properties": { "type": { "enum": ["text", "email", "number", "password", "tel", "url", "search", "date", "file", "checkbox", "radio", "range", null] }, "name": { "type": ["string", "null"], "maxLength": 10000 }, "label": { "type": ["string", "null"], "maxLength": 10000 }, "placeholder": { "type": ["string", "null"], "maxLength": 10000 }, "defaultValue": { "type": ["string", "null"], "maxLength": 10000 }, "options": { "type": ["string", "null"], "maxLength": 10000 }, "min": { "type": ["string", "null"] }, "max": { "type": ["string", "null"] }, "step": { "type": ["string", "null"] }, "autoComplete": { "type": ["string", "null"] }, "defaultChecked": { "type": ["boolean", "null"] }, "required": { "type": ["boolean", "null"] }, "disabled": { "type": ["boolean", "null"] }, "readOnly": { "type": ["boolean", "null"] }, "nativeAppearance": { "type": ["boolean", "null"] }, "rows": { "type": ["integer", "null"], "minimum": 1, "maximum": 100 } } },
+    "screen": {
+      "type": "object",
+      "required": ["id", "name", "elements"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "i18n": { "description": "多言語（Issue #182）：言語のコード → 画面名・タイトル・説明の訳", "type": "object" },
+        "name": { "type": "string" },
+        "codeName": { "type": "string", "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$", "description": "URLのパス" },
+        "description": { "type": "string" },
+        "fullBleed": { "type": "boolean" },
+        "background": { "$ref": "#/$defs/background" },
+        "overlay": { "$ref": "#/$defs/overlay" },
+        "variables": { "$ref": "#/$defs/variables" },
+        "elements": { "type": "array", "items": { "$ref": "#/$defs/element" } }
+      }
+    },
+    "overlay": {
+      "type": "object", "required": ["kind"],
+      "properties": {
+        "kind": { "enum": ["modal", "sheet", "popover", "toast"] },
+        "position": { "enum": ["center", "top", "bottom", "left", "right", "anchor"] },
+        "width": { "type": "number", "minimum": 160, "maximum": 2400 },
+        "backdrop": { "type": "boolean" }, "outsideClose": { "type": "boolean" },
+        "escapeClose": { "type": "boolean" }, "scrollLock": { "type": "boolean" }, "history": { "type": "boolean" },
+        "motion": { "enum": ["fade", "slide", "scale", "none"] },
+        "duration": { "type": "number", "minimum": 0, "maximum": 60000 }
+      }
+    },
+    "variables": {
+      "type": "array", "maxItems": 50,
+      "items": {
+        "type": "object", "required": ["id", "name", "type", "initial"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "name": { "type": "string", "minLength": 1, "maxLength": 100 },
+          "type": { "enum": ["boolean", "text", "number", "choice"] },
+          "initial": { "type": ["string", "number", "boolean"] },
+          "options": { "type": "array", "minItems": 1, "maxItems": 50, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+          "expression": { "$ref": "#/$defs/stateExpression" }
+        }
+      }
+    },
+    "stateExpression": {
+      "type": "object", "required": ["kind"], "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["value", "state", "count", "sum", "unary", "binary", "if", "fn"] },
+        "value": { "anyOf": [{ "type": ["string", "number", "boolean"] }, { "$ref": "#/$defs/stateExpression" }] },
+        "id": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "datasetId": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "fieldId": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "op": { "enum": ["!", "+", "-", "*", "/", "%", "**", "===", "!==", "<", "<=", ">", ">=", "&&", "||"] },
+        "left": { "$ref": "#/$defs/stateExpression" }, "right": { "$ref": "#/$defs/stateExpression" },
+        "condition": { "$ref": "#/$defs/stateExpression" }, "yes": { "$ref": "#/$defs/stateExpression" }, "no": { "$ref": "#/$defs/stateExpression" },
+        "name": { "enum": ["min", "max", "round", "abs", "length", "text"] },
+        "args": { "type": "array", "minItems": 1, "maxItems": 10, "items": { "$ref": "#/$defs/stateExpression" } }
+      },
+      "oneOf": [
+        { "properties": { "kind": { "const": "value" }, "value": { "type": ["string", "number", "boolean"] } }, "required": ["value"], "propertyNames": { "enum": ["kind", "value"] } },
+        { "properties": { "kind": { "const": "state" } }, "required": ["id"], "propertyNames": { "enum": ["kind", "id"] } },
+        { "properties": { "kind": { "const": "count" } }, "required": ["datasetId"], "propertyNames": { "enum": ["kind", "datasetId"] } },
+        { "properties": { "kind": { "const": "sum" } }, "required": ["datasetId", "fieldId"], "propertyNames": { "enum": ["kind", "datasetId", "fieldId"] } },
+        { "properties": { "kind": { "const": "unary" }, "value": { "$ref": "#/$defs/stateExpression" }, "op": { "enum": ["!", "+", "-"] } }, "required": ["op", "value"], "propertyNames": { "enum": ["kind", "op", "value"] } },
+        { "properties": { "kind": { "const": "binary" }, "op": { "enum": ["+", "-", "*", "/", "%", "**", "===", "!==", "<", "<=", ">", ">=", "&&", "||"] } }, "required": ["op", "left", "right"], "propertyNames": { "enum": ["kind", "op", "left", "right"] } },
+        { "properties": { "kind": { "const": "if" } }, "required": ["condition", "yes", "no"], "propertyNames": { "enum": ["kind", "condition", "yes", "no"] } },
+        { "properties": { "kind": { "const": "fn" } }, "required": ["name", "args"], "propertyNames": { "enum": ["kind", "name", "args"] } }
+      ]
+    },
+    "stateBinding": {
+      "type": "object",
+      "properties": {
+        "input": { "type": "object", "required": ["stateId"], "properties": { "stateId": { "type": "string" } } },
+        "visible": { "type": "object", "required": ["stateId", "operator", "value"], "properties": { "stateId": { "type": "string" }, "operator": { "enum": ["eq", "ne"] }, "value": { "type": ["string", "number", "boolean"] } } },
+        "style": { "type": "object", "required": ["stateId", "operator", "value", "values"], "properties": { "stateId": { "type": "string" }, "operator": { "enum": ["eq", "ne"] }, "value": { "type": ["string", "number", "boolean"] }, "values": { "type": "object", "maxProperties": 200, "additionalProperties": { "type": ["string", "number", "boolean", "object", "array", "null"] } } } },
+        "text": { "type": "object", "required": ["stateId"], "properties": { "stateId": { "type": "string" }, "prefix": { "type": "string" }, "suffix": { "type": "string" } } },
+        "variant": { "type": "object", "required": ["stateId", "values"], "properties": { "stateId": { "type": "string" }, "values": { "type": "object", "additionalProperties": { "type": "string" } } } }
+      }
+    },
+    "interaction": {
+      "type": "object", "required": ["id", "trigger", "actions"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "trigger": { "enum": ["click", "hover", "focus", "visible", "key"] },
+        "key": { "type": "string", "minLength": 1 },
+        "actions": { "type": "array", "minItems": 1, "maxItems": 50, "items": { "$ref": "#/$defs/siteAction" } }
+      }
+    },
+    "siteAction": {
+      "type": "object", "required": ["type"],
+      "allOf": [
+        { "if": { "properties": { "type": { "enum": ["copy", "toast", "phone", "email"] } } }, "then": { "properties": { "value": { "type": "string" } } } },
+        { "if": { "properties": { "type": { "const": "setState" } } }, "then": { "required": ["stateId", "value"] } },
+        { "if": { "properties": { "type": { "const": "toggleState" } } }, "then": { "required": ["stateId"] } },
+        { "if": { "properties": { "type": { "const": "incrementState" } } }, "then": { "required": ["stateId", "amount"] } }
+      ],
+      "properties": {
+        "type": { "enum": ["navigate", "back", "openOverlay", "closeOverlay", "setState", "toggleState", "incrementState", "link", "scroll", "copy", "toast", "dismissToast", "phone", "email", "submit", "reset", "call", "playMotion"] },
+        "stateId": { "type": "string" }, "amount": { "type": "number" },
+        "screenId": { "type": "string" }, "targetId": { "type": "string" },
+        "url": { "type": "string" }, "newTab": { "type": "boolean" }, "smooth": { "type": "boolean" }, "current": { "type": "boolean" },
+        "componentId": { "type": "string" }, "tone": { "enum": ["info", "success", "error"] }, "duration": { "type": "number", "minimum": 0, "maximum": 60000 },
+        "value": { "type": ["string", "number", "boolean"] }, "name": { "type": "string" }, "argument": { "type": "string" }
+      }
+    },
+    "element": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "enum": ["container", "heading", "text", "image", "button", "icon", "progress", "spinner", "custom", "data-list", "data-detail", "catalog", "cart", "review", "receipt", "input", "textarea", "select", "label", "fieldset"] },
+        "name": { "type": "string", "description": "レイヤーに出る名前" },
+        "text": { "type": "string" },
+        "level": { "type": "integer", "minimum": 1, "maximum": 6 },
+        "src": { "type": "string", "description": "画像のURL、または asset:<素材のid>" },
+        "alt": { "type": "string" },
+        "decorative": { "type": "boolean" },
+        "interactions": { "type": "array", "maxItems": 50, "description": "操作のきっかけと順序付きの動作", "items": { "$ref": "#/$defs/interaction" } },
+        "stateBinding": { "$ref": "#/$defs/stateBinding" },
+        "targetScreenId": { "type": "string", "description": "ボタンの遷移先の画面 id" },
+        "componentId": { "type": "string", "description": "共通部品の配置" },
+        "variantId": { "type": ["string", "null"] },
+        "customComponentId": { "type": "string" },
+        "customValues": { "type": "object" },
+        "listView": { "type": ["object", "null"], "description": "データ一覧の見せ方（Issue #240）", "additionalProperties": false, "properties": {
+          "layout": { "enum": ["cards", "table"] }, "caption": { "type": "string", "maxLength": 10000 }, "search": { "type": "boolean" },
+          "sortable": { "type": "array", "maxItems": 200, "items": { "type": "string" } },
+          "sort": { "type": ["object", "null"], "required": ["fieldId", "direction"], "properties": { "fieldId": { "type": "string" }, "direction": { "enum": ["asc", "desc"] } } },
+          "pageSize": { "type": "integer", "minimum": 1, "maximum": 100 },
+          "formats": { "type": "object", "additionalProperties": { "type": "object", "required": ["kind"], "properties": { "kind": { "enum": ["date", "dateShort", "dateTime", "currency", "number", "truncate"] }, "length": { "type": "integer", "minimum": 1 } } } },
+          "striped": { "type": "boolean" }, "density": { "enum": ["compact", "normal", "relaxed"] },
+          "headerColor": { "type": "string" }, "headerToken": { "type": "string" }, "lineColor": { "type": "string" }, "lineToken": { "type": "string" } } },
+        "control": { "$ref": "#/$defs/control" },
+        "comboboxPart": { "enum": ["label", "input", "list", "option", "value", "empty", "error"] },
+        "combobox": { "type": "object", "additionalProperties": false, "properties": {
+          "options": { "type": "array", "maxItems": 1000, "items": { "type": "object", "required": ["value", "label"], "properties": { "value": { "type": "string", "minLength": 1, "maxLength": 10000 }, "label": { "type": "string", "minLength": 1, "maxLength": 10000 }, "disabled": { "type": "boolean" } } } },
+          "datasetId": { "type": "string" }, "labelField": { "type": "string" }, "valueField": { "type": "string" }, "disabledField": { "type": "string" }
+        } },
+        "style": { "$ref": "#/$defs/style" },
+        "tokenRefs": { "type": "object", "description": "スタイルの項目 → トークンの id。生の値より優先する。色・余白は生の値を書かず、トークンを使う", "additionalProperties": { "type": ["string", "null"] } },
+        "responsive": { "type": "object", "description": "ブレークポイントの id → その幅からのスタイルの上書き", "additionalProperties": { "$ref": "#/$defs/style" } },
+        "states": { "type": "object", "propertyNames": { "enum": ["hover", "active", "focus", "disabled", "checked", "current"] }, "additionalProperties": { "type": "object", "properties": { "style": { "$ref": "#/$defs/style" } } } },
+        "css": { "type": "object", "description": "直接書いたCSSの宣言（プロパティ → 値）", "additionalProperties": { "type": "string" } },
+        "animations": { "type": "array", "items": { "$ref": "#/$defs/animation" } },
+        "repeat": { "description": "繰り返し（Issue #160）：データの行の数だけ並べる", "type": ["object", "null"], "required": ["datasetId"], "properties": { "datasetId": { "type": "string" }, "filter": { "type": ["object", "null"] }, "sort": { "type": ["object", "null"] }, "limit": { "type": ["integer", "null"] }, "offset": { "type": ["integer", "null"] }, "emptyText": { "type": "string" } } },
+        "dataBind": { "description": "値の流し込み（Issue #160）：文言・画像・リンクに、行（繰り返しの外では選んだ1件）の項目を入れる", "type": ["object", "null"], "properties": { "text": { "type": "string" }, "src": { "type": "string" }, "alt": { "type": "string" }, "href": { "type": "string" }, "datasetId": { "type": "string" }, "pick": { "enum": ["first", "latest", "record"] }, "recordId": { "type": "string" }, "latestBy": { "type": "string" }, "format": { "type": ["object", "null"] }, "fallback": { "type": ["object", "null"] }, "parts": { "type": "object" } } },
+        "viewTransition": { "description": "画面の間でつなげる名前（Issue #176）", "type": "string" },
+        "i18n": { "description": "多言語（Issue #182）：言語のコード → 文言（text）・画像の代わりの文言（alt）の訳", "type": "object", "additionalProperties": { "type": "object", "properties": { "text": { "type": "string" }, "alt": { "type": "string" } } } },
+        "children": { "type": "array", "items": { "$ref": "#/$defs/element" } }
+      }
+    },
+    "style": {
+      "type": "object",
+      "description": "React の style と同じ名前（camelCase）。数値は px。opacity は 0〜1、scale は %、rotate は度",
+      "additionalProperties": { "type": ["string", "number", "boolean", "object", "null"] }
+    },
+    "animation": {
+      "type": "object",
+      "required": ["trigger"],
+      "properties": {
+        "id": { "type": "string" },
+        "trigger": { "enum": ["appear", "inView", "exit", "hover", "press", "focus", "loaded", "added", "error", "scroll", "action"] },
+        "split": { "enum": ["char", "word", "line"], "description": "文字を分けて動かす（見出し・文章）" },
+        "scroll": { "type": "object", "properties": { "source": { "enum": ["element", "page"] }, "range": { "type": "array", "items": { "type": "number" } } } },
+        "path": { "description": "道筋に沿った動き（Issue #161）。座標は要素の左上の止まっている位置からのずれ（px）", "type": ["object", "null"], "properties": { "points": { "type": "array", "minItems": 2, "maxItems": 50, "items": { "type": "object", "required": ["x", "y"], "properties": { "x": { "type": "number" }, "y": { "type": "number" }, "in": { "type": "object" }, "out": { "type": "object" } } } }, "rotate": { "type": "boolean" } } },
+        "preset": { "type": "string", "description": "擬態語のプリセットの id（puni・fuwa など）" },
+        "effect": { "type": "object", "properties": { "opacity": { "type": "number" }, "x": { "type": "number" }, "y": { "type": "number" }, "scale": { "type": "number" }, "rotate": { "type": "number" }, "blur": { "type": "number" } } },
+        "frames": { "type": "array" },
+        "spring": { "type": "object", "properties": { "stiffness": { "type": "number" }, "damping": { "type": "number" }, "mass": { "type": "number" } } },
+        "duration": { "type": "number", "minimum": 0 },
+        "delay": { "type": "number", "minimum": 0 },
+        "easing": { "type": "string" },
+        "durationToken": { "type": "string" },
+        "easingToken": { "type": "string" },
+        "iterations": { "type": ["number", "string"] },
+        "stagger": { "type": "object", "properties": { "interval": { "type": "number" } } },
+        "strength": { "type": "number" },
+        "speed": { "type": "number" },
+        "reducedFallback": { "enum": ["opacity", "none"] }
+      }
+    },
+    "motionPreset": {
+      "type": "object",
+      "required": ["id", "names", "motion"],
+      "properties": {
+        "id": { "type": "string" },
+        "names": { "type": "array", "items": { "type": "string" }, "minItems": 1, "description": "擬態語（最初が見出し）" },
+        "use": { "type": "string" },
+        "reduced": { "enum": ["opacity", "none"] },
+        "motion": { "$ref": "#/$defs/animation" }
+      }
+    },
+    "designSystem": {
+      "type": "object",
+      "required": ["tokens", "components"],
+      "properties": {
+        "tokens": { "type": "array", "items": { "$ref": "#/$defs/token" } },
+        "components": { "type": "array", "items": { "type": "object", "required": ["id", "name", "type", "root"], "properties": { "variables": { "$ref": "#/$defs/variables" }, "root": { "$ref": "#/$defs/element" }, "variants": { "type": "array" } } } },
+        "modes": { "type": "array", "items": { "type": "object", "required": ["id", "name"], "properties": { "id": { "type": "string" }, "name": { "type": "string" }, "scheme": { "enum": ["light", "dark"] } } } }
+      }
+    },
+    "token": {
+      "type": "object",
+      "required": ["id", "name", "kind", "value"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "codeName": { "type": "string", "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$", "description": "CSS変数名（--color-<codeName> など）" },
+        "kind": { "enum": ["color", "fontSize", "spacing", "shadow", "radius", "borderWidth", "fontWeight", "lineHeight", "letterSpacing", "fontFamily", "duration", "easing", "opacity", "zIndex", "textStyle"] },
+        "value": { "description": "色は #RRGGBB / #RRGGBBAA、余白・角丸は px の数値、文字サイズは数値（px）か '1.5rem'、文字スタイルはオブジェクト" },
+        "ref": { "type": "string", "description": "同じ種類の別トークンの id（参照）" },
+        "group": { "type": "string" },
+        "modes": { "type": "object", "additionalProperties": { "type": "object", "properties": { "value": {}, "ref": { "type": "string" } } } }
+      }
+    },
+    "background": {
+      "type": "object",
+      "properties": { "color": { "type": "string" }, "tokenId": { "type": "string" } }
+    }
+  }
+}

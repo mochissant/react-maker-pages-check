@@ -1,0 +1,40 @@
+{
+  "datasets": [
+    {
+      "id": "products",
+      "key": "data1",
+      "typeName": "Data1",
+      "name": "商品",
+      "fields": [
+        {
+          "id": "name",
+          "key": "name",
+          "label": "商品名",
+          "type": "text",
+          "required": true,
+          "nullable": false,
+          "absent": false
+        },
+        {
+          "id": "price",
+          "key": "price",
+          "label": "価格",
+          "type": "number",
+          "required": true,
+          "nullable": false,
+          "absent": false,
+          "min": 0
+        },
+        {
+          "id": "image",
+          "key": "image",
+          "label": "画像",
+          "type": "image",
+          "required": false,
+          "nullable": true,
+          "absent": true
+        }
+      ]
+    }
+  ]
+}

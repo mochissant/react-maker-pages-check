@@ -1,0 +1,104 @@
+# react-maker が書き出した、GitHub Pages への公開（Issue #168・#170）。react-maker-publish: 3
+# - 既定のブランチ（main など）へのプッシュ：本番（ルート）を、このビルドの中身で置き換える（消した画面は残らない）
+# - 閲覧用のURL：編集GUIの「閲覧用のURLを発行」で動く（workflow_dispatch）。推測しにくい /preview/<id>/ に、発行した時点の版で置く。
+#   ほかのブランチへのプッシュでは公開しない。noindex と robots.txt の除外を付ける。パスワードがあれば、すべてのファイルを暗号化する
+# - 取り消し：編集GUIの「取り消す」で gh-pages から直接消す（revoke でも消せる）。ブランチを消すと、そのブランチから発行した閲覧用のURLも消える
+# - gh-pages への書き込みは、ブランチをまたいで1つずつ行う
+# - public/CNAME（独自ドメイン）があれば、ドメインのルートで配信する。無ければ https://<owner>.github.io/<repo>/
+# GitHub の Settings → Pages の Source は「Deploy from a branch：gh-pages / (root)」にする（編集GUIの「閲覧用のURLを用意する」が設定する）
+name: Publish site
+
+on:
+  push:
+  delete:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: preview（閲覧用のURLを発行・最新の版に更新）か revoke（取り消す）
+        required: true
+        default: preview
+        type: choice
+        options: [preview, revoke]
+      id:
+        description: 閲覧用のURLの id（推測しにくい文字列）
+        required: true
+        type: string
+      lock:
+        description: パスワードの公開鍵と塩（JSON。秘密ではない）。空ならパスワードなし
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-pages-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: >-
+      (github.event_name == 'push' && github.ref_name == github.event.repository.default_branch) ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'delete' && github.event.ref_type == 'branch')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Decide what to publish
+        env:
+          INPUT_ACTION: ${{ inputs.action }}
+          INPUT_ID: ${{ inputs.id }}
+          DELETED_BRANCH: ${{ github.event_name == 'delete' && github.event.ref || '' }}
+        run: |
+          repo="${GITHUB_REPOSITORY#*/}"
+          if [ -f public/CNAME ] || [ "$repo" = "${GITHUB_REPOSITORY_OWNER}.github.io" ]; then root="/"; else root="/${repo}/"; fi
+          case "$GITHUB_EVENT_NAME" in
+            push) mode=production; base="$root" ;;
+            delete) mode=revoke-branch; base="$root" ;;
+            workflow_dispatch)
+              mode="$INPUT_ACTION"
+              if ! printf '%s' "$INPUT_ID" | grep -Eq '^[A-Za-z0-9_-]{8,64}$'; then echo "閲覧用のURLの id が正しくありません"; exit 1; fi
+              base="${root}preview/${INPUT_ID}/"
+              # 閲覧用のURLでは、見た人が GitHub の Issue でコメントを送れる（Issue #171）
+              echo "VITE_RM_PREVIEW_REPO=${GITHUB_REPOSITORY}" >> "$GITHUB_ENV" ;;
+          esac
+          {
+            echo "MODE=${mode}"
+            echo "SITE_ROOT=${root}"
+            echo "SITE_BASE=${base}"
+            echo "PREVIEW_ID=${INPUT_ID}"
+            echo "TARGET_BRANCH=${DELETED_BRANCH:-$GITHUB_REF_NAME}"
+          } >> "$GITHUB_ENV"
+      - if: env.MODE == 'production' || env.MODE == 'preview'
+        run: npm ci
+      - if: env.MODE == 'production' || env.MODE == 'preview'
+        run: npm run build
+      - name: Check out gh-pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if ! git clone --quiet --branch gh-pages --single-branch "$remote" pages; then
+            mkdir pages && git -C pages init --quiet -b gh-pages && git -C pages remote add origin "$remote"
+          fi
+      - name: Place the site
+        env:
+          RM_PREVIEW_LOCK: ${{ inputs.lock }}
+        run: node scripts/deploy-pages.mjs --mode "$MODE" --dist dist --pages pages --root "$SITE_ROOT" --id "$PREVIEW_ID" --branch "$TARGET_BRANCH" --sha "$GITHUB_SHA"
+      - name: Push gh-pages
+        run: |
+          cd pages
+          git add -A
+          if git diff --cached --quiet; then echo "変更なし"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit --quiet -m "Publish ${MODE} ${PREVIEW_ID:-} (${GITHUB_SHA::7})"
+          # 編集GUIの取り消し（gh-pages への直接のコミット）と重なったら、取り込んでから置き直す
+          for attempt in 1 2 3; do
+            if git push --quiet origin HEAD:gh-pages; then exit 0; fi
+            git pull --quiet --rebase origin gh-pages || { git rebase --abort; exit 1; }
+          done
+          exit 1

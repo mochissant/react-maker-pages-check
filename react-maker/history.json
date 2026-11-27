@@ -1,0 +1,31 @@
+{
+  "format": "react-maker-history",
+  "version": 1,
+  "versions": [
+    {
+      "id": "57d890be-4c49-4abe-a704-d452ce5a591c",
+      "name": "自動の版 2026/11/27 10:34",
+      "createdAt": "2026-11-27T01:34:49.676Z",
+      "auto": true,
+      "periodic": true,
+      "snapshot": {
+        "id": "2b9dee02-3631-4d50-ba44-9f124e8add61",
+        "startScreenId": null,
+        "screens": [],
+        "exportOptions": {
+          "shadcn": true
+        },
+        "schemaVersion": 6,
+        "products": [],
+        "productFields": [],
+        "designSystem": {
+          "tokens": [],
+          "components": []
+        },
+        "breakpoints": [],
+        "datasets": []
+      }
+    }
+  ],
+  "comments": []
+}

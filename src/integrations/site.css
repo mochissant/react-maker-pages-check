@@ -1,0 +1,7 @@
+@layer theme, base, rm-preview, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "../preview.css" layer(rm-preview);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../generated/styles.css";
+@source "../";
+@source not "../generated";

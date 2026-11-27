@@ -1,0 +1,1070 @@
+{
+  "format": "react-maker-mcp-index",
+  "version": 1,
+  "editorUrl": "http://localhost:5173/",
+  "tokens": [
+    {
+      "id": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+      "cssVar": "--color-brand",
+      "classes": [
+        "bg-brand",
+        "text-brand",
+        "border-brand"
+      ],
+      "link": "http://localhost:5173/?token=73480f9b-ef03-4b96-a4c4-1bd3f08f139b"
+    },
+    {
+      "id": "87e78ecd-7c79-4c72-8999-65f8a5f1f96c",
+      "cssVar": "--color-on-brand",
+      "classes": [
+        "bg-on-brand",
+        "text-on-brand",
+        "border-on-brand"
+      ],
+      "link": "http://localhost:5173/?token=87e78ecd-7c79-4c72-8999-65f8a5f1f96c"
+    },
+    {
+      "id": "0188c498-cff5-4c13-8d82-59c049949bec",
+      "cssVar": "--color-surface",
+      "classes": [
+        "bg-surface",
+        "text-surface",
+        "border-surface"
+      ],
+      "link": "http://localhost:5173/?token=0188c498-cff5-4c13-8d82-59c049949bec"
+    },
+    {
+      "id": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68",
+      "cssVar": "--color-muted",
+      "classes": [
+        "bg-muted",
+        "text-muted",
+        "border-muted"
+      ],
+      "link": "http://localhost:5173/?token=ab2cbfe6-8209-4142-a1ba-6c6f8dffad68"
+    },
+    {
+      "id": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+      "cssVar": "--color-line",
+      "classes": [
+        "bg-line",
+        "text-line",
+        "border-line"
+      ],
+      "link": "http://localhost:5173/?token=c9de6e60-7209-4604-8f9b-aa74398158b7"
+    },
+    {
+      "id": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+      "cssVar": "--radius-card",
+      "classes": [
+        "rounded-card"
+      ],
+      "link": "http://localhost:5173/?token=ddd64de1-a890-4198-8d71-0e1698c2219f"
+    },
+    {
+      "id": "6c992461-281b-452b-bd37-59c9277b59b6",
+      "cssVar": "--spacing-section",
+      "classes": [
+        "p-section",
+        "m-section",
+        "gap-section"
+      ],
+      "link": "http://localhost:5173/?token=6c992461-281b-452b-bd37-59c9277b59b6"
+    },
+    {
+      "id": "b4beca67-657b-4bf6-a27d-fc207e6ba139",
+      "cssVar": "--spacing-space-l",
+      "classes": [
+        "p-space-l",
+        "m-space-l",
+        "gap-space-l"
+      ],
+      "link": "http://localhost:5173/?token=b4beca67-657b-4bf6-a27d-fc207e6ba139"
+    },
+    {
+      "id": "b233360f-6345-40e5-90ea-829f807e7c19",
+      "cssVar": "--spacing-space-s",
+      "classes": [
+        "p-space-s",
+        "m-space-s",
+        "gap-space-s"
+      ],
+      "link": "http://localhost:5173/?token=b233360f-6345-40e5-90ea-829f807e7c19"
+    },
+    {
+      "id": "f1707823-613d-4ce9-bce9-1917a5b4b50b",
+      "cssVar": "--spacing-space-m",
+      "classes": [
+        "p-space-m",
+        "m-space-m",
+        "gap-space-m"
+      ],
+      "link": "http://localhost:5173/?token=f1707823-613d-4ce9-bce9-1917a5b4b50b"
+    },
+    {
+      "id": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+      "cssVar": "--spacing-space-ml",
+      "classes": [
+        "p-space-ml",
+        "m-space-ml",
+        "gap-space-ml"
+      ],
+      "link": "http://localhost:5173/?token=c2aab45b-6374-4f64-9f61-e38534b868c4"
+    },
+    {
+      "id": "0cc5314d-9025-4a80-9dae-dfa30df04ae1",
+      "cssVar": "--color-header-glass",
+      "classes": [
+        "bg-header-glass",
+        "text-header-glass",
+        "border-header-glass"
+      ],
+      "link": "http://localhost:5173/?token=0cc5314d-9025-4a80-9dae-dfa30df04ae1"
+    },
+    {
+      "id": "c081fc49-3ef5-4975-a60a-f36e710b6dc4",
+      "cssVar": "--text-text-1-25",
+      "classes": [
+        "text-text-1-25"
+      ],
+      "link": "http://localhost:5173/?token=c081fc49-3ef5-4975-a60a-f36e710b6dc4"
+    },
+    {
+      "id": "f803bdef-dd07-4141-9736-ffa046c767a5",
+      "cssVar": "--text-text-2-75",
+      "classes": [
+        "text-text-2-75"
+      ],
+      "link": "http://localhost:5173/?token=f803bdef-dd07-4141-9736-ffa046c767a5"
+    },
+    {
+      "id": "d4064143-1d3e-4b49-ae6d-4a9a30c94031",
+      "cssVar": "--spacing-space-xs",
+      "classes": [
+        "p-space-xs",
+        "m-space-xs",
+        "gap-space-xs"
+      ],
+      "link": "http://localhost:5173/?token=d4064143-1d3e-4b49-ae6d-4a9a30c94031"
+    },
+    {
+      "id": "1fa7cb14-b4f1-49af-88a0-fccce5e39587",
+      "cssVar": "--text-text-2-5",
+      "classes": [
+        "text-text-2-5"
+      ],
+      "link": "http://localhost:5173/?token=1fa7cb14-b4f1-49af-88a0-fccce5e39587"
+    },
+    {
+      "id": "62ddd0f1-94d6-4337-86d2-5f48be944436",
+      "cssVar": "--text-text-1-125",
+      "classes": [
+        "text-text-1-125"
+      ],
+      "link": "http://localhost:5173/?token=62ddd0f1-94d6-4337-86d2-5f48be944436"
+    },
+    {
+      "id": "b804f3f0-fc3f-4932-9d34-c9883f18bf1c",
+      "cssVar": "--text-text-0-875",
+      "classes": [
+        "text-text-0-875"
+      ],
+      "link": "http://localhost:5173/?token=b804f3f0-fc3f-4932-9d34-c9883f18bf1c"
+    },
+    {
+      "id": "d73690b4-7d0f-4dd8-9a89-31d6e534aacf",
+      "cssVar": "--text-text-2",
+      "classes": [
+        "text-text-2"
+      ],
+      "link": "http://localhost:5173/?token=d73690b4-7d0f-4dd8-9a89-31d6e534aacf"
+    },
+    {
+      "id": "e217a90e-7fd7-4d18-9083-e1b474e339c8",
+      "cssVar": "--color-text",
+      "classes": [
+        "bg-text",
+        "text-text",
+        "border-text"
+      ],
+      "link": "http://localhost:5173/?token=e217a90e-7fd7-4d18-9083-e1b474e339c8"
+    },
+    {
+      "id": "f5596fcc-d3bf-4106-a9e2-30c8297ecc07",
+      "cssVar": "--text-text-1-0625",
+      "classes": [
+        "text-text-1-0625"
+      ],
+      "link": "http://localhost:5173/?token=f5596fcc-d3bf-4106-a9e2-30c8297ecc07"
+    },
+    {
+      "id": "5406f674-9c14-4912-80fd-3faa0905a86b",
+      "cssVar": "--spacing-space-xl",
+      "classes": [
+        "p-space-xl",
+        "m-space-xl",
+        "gap-space-xl"
+      ],
+      "link": "http://localhost:5173/?token=5406f674-9c14-4912-80fd-3faa0905a86b"
+    }
+  ],
+  "screens": [
+    {
+      "id": "90ca1973-e446-4a92-88c4-f5edcf8a5178",
+      "codeName": "lp",
+      "path": "/",
+      "datasets": [],
+      "targets": [],
+      "link": "http://localhost:5173/?screen=90ca1973-e446-4a92-88c4-f5edcf8a5178"
+    },
+    {
+      "id": "45c22070-73f5-4087-b031-b3e51685587b",
+      "codeName": "page-1",
+      "path": "/page-1",
+      "datasets": [],
+      "targets": [
+        "e9affcf7-9e11-49a2-84d0-36eae251d5e4"
+      ],
+      "link": "http://localhost:5173/?screen=45c22070-73f5-4087-b031-b3e51685587b"
+    },
+    {
+      "id": "e9affcf7-9e11-49a2-84d0-36eae251d5e4",
+      "codeName": "page-2",
+      "path": "/page-2",
+      "datasets": [],
+      "targets": [
+        "275de1c5-ef0f-46b9-9632-ef6599c68cda",
+        "45c22070-73f5-4087-b031-b3e51685587b"
+      ],
+      "link": "http://localhost:5173/?screen=e9affcf7-9e11-49a2-84d0-36eae251d5e4"
+    },
+    {
+      "id": "275de1c5-ef0f-46b9-9632-ef6599c68cda",
+      "codeName": "page-3",
+      "path": "/page-3",
+      "datasets": [],
+      "targets": [
+        "dd408b86-b443-4b3f-9b8c-31f754bf96de",
+        "e9affcf7-9e11-49a2-84d0-36eae251d5e4"
+      ],
+      "link": "http://localhost:5173/?screen=275de1c5-ef0f-46b9-9632-ef6599c68cda"
+    },
+    {
+      "id": "dd408b86-b443-4b3f-9b8c-31f754bf96de",
+      "codeName": "page-4",
+      "path": "/page-4",
+      "datasets": [],
+      "targets": [
+        "45c22070-73f5-4087-b031-b3e51685587b"
+      ],
+      "link": "http://localhost:5173/?screen=dd408b86-b443-4b3f-9b8c-31f754bf96de"
+    }
+  ],
+  "components": [
+    {
+      "id": "0fa818cb-5797-4139-a4da-d244786a3158",
+      "slug": "component1",
+      "codeName": "Component1",
+      "file": null,
+      "docs": "design-system/component1/",
+      "link": "http://localhost:5173/?component=0fa818cb-5797-4139-a4da-d244786a3158"
+    },
+    {
+      "id": "a73b4ae1-da66-417a-9145-bf7e0fda1cfb",
+      "slug": "component2",
+      "codeName": "Component2",
+      "file": null,
+      "docs": "design-system/component2/",
+      "link": "http://localhost:5173/?component=a73b4ae1-da66-417a-9145-bf7e0fda1cfb"
+    },
+    {
+      "id": "dd61f41d-3d79-426d-be82-4e209705c08b",
+      "slug": "component3",
+      "codeName": "Component3",
+      "file": "src/components/shared/Component3.tsx",
+      "docs": "design-system/component3/",
+      "link": "http://localhost:5173/?component=dd61f41d-3d79-426d-be82-4e209705c08b"
+    }
+  ],
+  "componentDocs": {
+    "format": "react-maker-component-docs",
+    "version": 1,
+    "name": "サイト",
+    "modes": [],
+    "tokens": [
+      {
+        "id": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+        "name": "メイン",
+        "kind": "color"
+      },
+      {
+        "id": "87e78ecd-7c79-4c72-8999-65f8a5f1f96c",
+        "name": "メインの上の文字",
+        "kind": "color"
+      },
+      {
+        "id": "0188c498-cff5-4c13-8d82-59c049949bec",
+        "name": "面",
+        "kind": "color"
+      },
+      {
+        "id": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68",
+        "name": "補足の文字",
+        "kind": "color"
+      },
+      {
+        "id": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+        "name": "線",
+        "kind": "color"
+      },
+      {
+        "id": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+        "name": "カードの角丸",
+        "kind": "radius"
+      },
+      {
+        "id": "6c992461-281b-452b-bd37-59c9277b59b6",
+        "name": "セクションの余白",
+        "kind": "spacing"
+      },
+      {
+        "id": "b4beca67-657b-4bf6-a27d-fc207e6ba139",
+        "name": "余白L",
+        "kind": "spacing"
+      },
+      {
+        "id": "b233360f-6345-40e5-90ea-829f807e7c19",
+        "name": "余白S",
+        "kind": "spacing"
+      },
+      {
+        "id": "f1707823-613d-4ce9-bce9-1917a5b4b50b",
+        "name": "余白M",
+        "kind": "spacing"
+      },
+      {
+        "id": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+        "name": "余白ML",
+        "kind": "spacing"
+      },
+      {
+        "id": "0cc5314d-9025-4a80-9dae-dfa30df04ae1",
+        "name": "ヘッダーの背景（半透明）",
+        "kind": "color"
+      },
+      {
+        "id": "c081fc49-3ef5-4975-a60a-f36e710b6dc4",
+        "name": "文字 1.25rem",
+        "kind": "fontSize"
+      },
+      {
+        "id": "f803bdef-dd07-4141-9736-ffa046c767a5",
+        "name": "文字 2.75rem",
+        "kind": "fontSize"
+      },
+      {
+        "id": "d4064143-1d3e-4b49-ae6d-4a9a30c94031",
+        "name": "余白XS",
+        "kind": "spacing"
+      },
+      {
+        "id": "1fa7cb14-b4f1-49af-88a0-fccce5e39587",
+        "name": "文字 2.5rem",
+        "kind": "fontSize"
+      },
+      {
+        "id": "62ddd0f1-94d6-4337-86d2-5f48be944436",
+        "name": "文字 1.125rem",
+        "kind": "fontSize"
+      },
+      {
+        "id": "b804f3f0-fc3f-4932-9d34-c9883f18bf1c",
+        "name": "文字 0.875rem",
+        "kind": "fontSize"
+      },
+      {
+        "id": "d73690b4-7d0f-4dd8-9a89-31d6e534aacf",
+        "name": "文字 2rem",
+        "kind": "fontSize"
+      },
+      {
+        "id": "e217a90e-7fd7-4d18-9083-e1b474e339c8",
+        "name": "文字",
+        "kind": "color"
+      },
+      {
+        "id": "f5596fcc-d3bf-4106-a9e2-30c8297ecc07",
+        "name": "文字 1.0625rem",
+        "kind": "fontSize"
+      },
+      {
+        "id": "5406f674-9c14-4912-80fd-3faa0905a86b",
+        "name": "余白XL",
+        "kind": "spacing"
+      }
+    ],
+    "components": [
+      {
+        "id": "0fa818cb-5797-4139-a4da-d244786a3158",
+        "slug": "component1",
+        "name": "共通ヘッダー",
+        "codeName": "Component1",
+        "compatible": false,
+        "description": "",
+        "type": "container",
+        "variants": [
+          {
+            "id": "",
+            "name": "base",
+            "label": "基本"
+          }
+        ],
+        "axes": [],
+        "properties": [
+          {
+            "name": "variant",
+            "type": "'base'",
+            "defaultValue": "'base'",
+            "description": "バリアント"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode",
+            "defaultValue": "",
+            "description": "部品の中に差し込む要素"
+          },
+          {
+            "name": "className",
+            "type": "string",
+            "defaultValue": "",
+            "description": "外側に足すクラス"
+          }
+        ],
+        "usages": [
+          {
+            "screenId": "90ca1973-e446-4a92-88c4-f5edcf8a5178",
+            "name": "LP",
+            "count": 1
+          }
+        ],
+        "tokens": [
+          {
+            "id": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+            "name": "メイン",
+            "kind": "color"
+          },
+          {
+            "id": "87e78ecd-7c79-4c72-8999-65f8a5f1f96c",
+            "name": "メインの上の文字",
+            "kind": "color"
+          },
+          {
+            "id": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+            "name": "線",
+            "kind": "color"
+          },
+          {
+            "id": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+            "name": "カードの角丸",
+            "kind": "radius"
+          },
+          {
+            "id": "b233360f-6345-40e5-90ea-829f807e7c19",
+            "name": "余白S",
+            "kind": "spacing"
+          },
+          {
+            "id": "f1707823-613d-4ce9-bce9-1917a5b4b50b",
+            "name": "余白M",
+            "kind": "spacing"
+          },
+          {
+            "id": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+            "name": "余白ML",
+            "kind": "spacing"
+          },
+          {
+            "id": "0cc5314d-9025-4a80-9dae-dfa30df04ae1",
+            "name": "ヘッダーの背景（半透明）",
+            "kind": "color"
+          },
+          {
+            "id": "c081fc49-3ef5-4975-a60a-f36e710b6dc4",
+            "name": "文字 1.25rem",
+            "kind": "fontSize"
+          }
+        ],
+        "motions": [
+          {
+            "part": "「はじめる」",
+            "trigger": "press",
+            "effect": "scale"
+          }
+        ],
+        "example": "import Component1 from './components/shared/Component1';\n\n<Component1 />"
+      },
+      {
+        "id": "a73b4ae1-da66-417a-9145-bf7e0fda1cfb",
+        "slug": "component2",
+        "name": "アコーディオンの項目",
+        "codeName": "Component2",
+        "compatible": false,
+        "description": "質問と答え（FAQ）。項目ごとに開け閉めする",
+        "type": "container",
+        "variants": [
+          {
+            "id": "",
+            "name": "base",
+            "label": "基本"
+          }
+        ],
+        "axes": [],
+        "properties": [
+          {
+            "name": "variant",
+            "type": "'base'",
+            "defaultValue": "'base'",
+            "description": "バリアント"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode",
+            "defaultValue": "",
+            "description": "部品の中に差し込む要素"
+          },
+          {
+            "name": "open",
+            "type": "boolean",
+            "defaultValue": "false",
+            "description": "状態「開いている」（配置で画面の状態につなげる）"
+          },
+          {
+            "name": "onOpenChange",
+            "type": "(value: boolean) => void",
+            "defaultValue": "",
+            "description": "状態「開いている」が変わったとき"
+          },
+          {
+            "name": "className",
+            "type": "string",
+            "defaultValue": "",
+            "description": "外側に足すクラス"
+          }
+        ],
+        "usages": [
+          {
+            "screenId": "90ca1973-e446-4a92-88c4-f5edcf8a5178",
+            "name": "LP",
+            "count": 2
+          }
+        ],
+        "tokens": [
+          {
+            "id": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68",
+            "name": "補足の文字",
+            "kind": "color"
+          },
+          {
+            "id": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+            "name": "線",
+            "kind": "color"
+          },
+          {
+            "id": "f1707823-613d-4ce9-bce9-1917a5b4b50b",
+            "name": "余白M",
+            "kind": "spacing"
+          },
+          {
+            "id": "e217a90e-7fd7-4d18-9083-e1b474e339c8",
+            "name": "文字",
+            "kind": "color"
+          },
+          {
+            "id": "f5596fcc-d3bf-4106-a9e2-30c8297ecc07",
+            "name": "文字 1.0625rem",
+            "kind": "fontSize"
+          }
+        ],
+        "motions": [],
+        "example": "import Component2 from './components/shared/Component2';\n\n<Component2 />"
+      },
+      {
+        "id": "dd61f41d-3d79-426d-be82-4e209705c08b",
+        "slug": "component3",
+        "name": "共通フッター",
+        "codeName": "Component3",
+        "compatible": true,
+        "description": "",
+        "type": "container",
+        "variants": [
+          {
+            "id": "",
+            "name": "base",
+            "label": "基本"
+          }
+        ],
+        "axes": [],
+        "properties": [
+          {
+            "name": "variant",
+            "type": "'base'",
+            "defaultValue": "'base'",
+            "description": "バリアント"
+          },
+          {
+            "name": "text2Text",
+            "type": "string",
+            "defaultValue": "\"© サービス名\"",
+            "description": "「© サービス名」 の文言"
+          },
+          {
+            "name": "text3Text",
+            "type": "string",
+            "defaultValue": "\"利用規約\"",
+            "description": "「利用規約」 の文言"
+          },
+          {
+            "name": "text4Text",
+            "type": "string",
+            "defaultValue": "\"プライバシー\"",
+            "description": "「プライバシー」 の文言"
+          },
+          {
+            "name": "children",
+            "type": "ReactNode",
+            "defaultValue": "",
+            "description": "部品の中に差し込む要素"
+          },
+          {
+            "name": "className",
+            "type": "string",
+            "defaultValue": "",
+            "description": "外側に足すクラス"
+          }
+        ],
+        "usages": [
+          {
+            "screenId": "90ca1973-e446-4a92-88c4-f5edcf8a5178",
+            "name": "LP",
+            "count": 1
+          }
+        ],
+        "tokens": [
+          {
+            "id": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68",
+            "name": "補足の文字",
+            "kind": "color"
+          },
+          {
+            "id": "b233360f-6345-40e5-90ea-829f807e7c19",
+            "name": "余白S",
+            "kind": "spacing"
+          },
+          {
+            "id": "f1707823-613d-4ce9-bce9-1917a5b4b50b",
+            "name": "余白M",
+            "kind": "spacing"
+          },
+          {
+            "id": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+            "name": "余白ML",
+            "kind": "spacing"
+          },
+          {
+            "id": "b804f3f0-fc3f-4932-9d34-c9883f18bf1c",
+            "name": "文字 0.875rem",
+            "kind": "fontSize"
+          },
+          {
+            "id": "5406f674-9c14-4912-80fd-3faa0905a86b",
+            "name": "余白XL",
+            "kind": "spacing"
+          }
+        ],
+        "motions": [],
+        "example": "import Component3 from './components/shared/Component3';\n\n<Component3 text2Text=\"© サービス名\" />"
+      }
+    ]
+  },
+  "motions": [
+    {
+      "id": "puni",
+      "names": [
+        "ぷにっ",
+        "ぷに",
+        "ぷにぷに"
+      ],
+      "use": "ボタン、カード",
+      "reduced": "none",
+      "motion": {
+        "trigger": "press",
+        "effect": {
+          "scale": 92
+        },
+        "spring": {
+          "stiffness": 420,
+          "damping": 11,
+          "mass": 1
+        }
+      }
+    },
+    {
+      "id": "poyon",
+      "names": [
+        "ぽよん",
+        "ぽよっ",
+        "ぼよん"
+      ],
+      "use": "モーダル、バッジ",
+      "reduced": "opacity",
+      "motion": {
+        "trigger": "appear",
+        "effect": {
+          "opacity": 0,
+          "scale": 60
+        },
+        "spring": {
+          "stiffness": 260,
+          "damping": 10,
+          "mass": 1
+        }
+      }
+    },
+    {
+      "id": "fuwa",
+      "names": [
+        "ふわっ",
+        "ふわ",
+        "ふわり",
+        "ふんわり"
+      ],
+      "use": "一覧の登場",
+      "reduced": "opacity",
+      "motion": {
+        "trigger": "inView",
+        "effect": {
+          "opacity": 0,
+          "y": 16
+        },
+        "duration": 520,
+        "easing": "emphasized",
+        "stagger": {
+          "interval": 80
+        }
+      }
+    },
+    {
+      "id": "su",
+      "names": [
+        "すっ",
+        "すー",
+        "すいっ"
+      ],
+      "use": "メニュー、シート",
+      "reduced": "opacity",
+      "motion": {
+        "trigger": "appear",
+        "effect": {
+          "opacity": 0,
+          "x": -24
+        },
+        "duration": 240,
+        "easing": "emphasized"
+      }
+    },
+    {
+      "id": "pyoko",
+      "names": [
+        "ぴょこ",
+        "ぴょこっ",
+        "ぴょこん",
+        "ひょこ"
+      ],
+      "use": "通知、フローティングボタン",
+      "reduced": "opacity",
+      "motion": {
+        "trigger": "appear",
+        "effect": {
+          "opacity": 0,
+          "y": 40
+        },
+        "spring": {
+          "stiffness": 320,
+          "damping": 14,
+          "mass": 1
+        }
+      }
+    },
+    {
+      "id": "gui",
+      "names": [
+        "ぐいっ",
+        "ぐい",
+        "ぐいーん"
+      ],
+      "use": "引っ張って更新、ドラッグ",
+      "reduced": "none",
+      "motion": {
+        "trigger": "press",
+        "effect": {
+          "y": 8,
+          "scale": 104
+        },
+        "spring": {
+          "stiffness": 200,
+          "damping": 12,
+          "mass": 1.2
+        }
+      }
+    },
+    {
+      "id": "buru",
+      "names": [
+        "ぶるっ",
+        "ぶる",
+        "ぶるぶる",
+        "ぷるぷる"
+      ],
+      "use": "入力エラー",
+      "reduced": "none",
+      "motion": {
+        "trigger": "appear",
+        "duration": 420,
+        "easing": "linear",
+        "frames": [
+          {
+            "x": 0
+          },
+          {
+            "x": -8
+          },
+          {
+            "x": 8
+          },
+          {
+            "x": -6
+          },
+          {
+            "x": 6
+          },
+          {
+            "x": -3
+          }
+        ]
+      }
+    },
+    {
+      "id": "shuwa",
+      "names": [
+        "しゅわっ",
+        "しゅわ",
+        "しゅわしゅわ"
+      ],
+      "use": "現れるとき（消えるときは「しゅわっと消える」）",
+      "reduced": "opacity",
+      "motion": {
+        "trigger": "appear",
+        "effect": {
+          "opacity": 0,
+          "blur": 8,
+          "scale": 104
+        },
+        "duration": 420,
+        "easing": "ease-out"
+      }
+    },
+    {
+      "id": "shuwa-out",
+      "names": [
+        "しゅわっと消える",
+        "しゅわしゅわ消える"
+      ],
+      "use": "削除、閉じる、画面から出るとき",
+      "reduced": "opacity",
+      "motion": {
+        "trigger": "exit",
+        "effect": {
+          "opacity": 0,
+          "blur": 8,
+          "scale": 104
+        },
+        "duration": 360,
+        "easing": "ease-in"
+      }
+    },
+    {
+      "id": "su-out",
+      "names": [
+        "すっと消える",
+        "すっと引く"
+      ],
+      "use": "メニュー、シートを閉じる、画面から出るとき",
+      "reduced": "opacity",
+      "motion": {
+        "trigger": "exit",
+        "effect": {
+          "opacity": 0,
+          "x": -24
+        },
+        "duration": 200,
+        "easing": "ease-in"
+      }
+    },
+    {
+      "id": "don",
+      "names": [
+        "ドン",
+        "どん",
+        "どーん",
+        "ドーン"
+      ],
+      "use": "強調、達成",
+      "reduced": "opacity",
+      "motion": {
+        "trigger": "appear",
+        "duration": 620,
+        "easing": "ease-out",
+        "frames": [
+          {
+            "opacity": 0,
+            "y": -60
+          },
+          {
+            "opacity": 1,
+            "y": 0,
+            "scale": 92
+          },
+          {
+            "scale": 104
+          },
+          {
+            "scale": 99
+          }
+        ]
+      }
+    },
+    {
+      "id": "yura",
+      "names": [
+        "ゆらっ",
+        "ゆら",
+        "ゆらり"
+      ],
+      "use": "視差（パララックス・parallax）、背景と手前を別の速さで",
+      "reduced": "none",
+      "motion": {
+        "trigger": "scroll",
+        "scroll": {
+          "source": "element",
+          "range": [
+            0,
+            100
+          ]
+        },
+        "parallax": -20,
+        "easing": "linear"
+      }
+    },
+    {
+      "id": "kuru",
+      "names": [
+        "くるっ",
+        "くる",
+        "くるり",
+        "くるん"
+      ],
+      "use": "カードを裏返して見せる（3D）",
+      "reduced": "opacity",
+      "motion": {
+        "trigger": "appear",
+        "effect": {
+          "opacity": 0,
+          "rotateY": -180
+        },
+        "duration": 700,
+        "easing": "emphasized"
+      }
+    },
+    {
+      "id": "gura",
+      "names": [
+        "ぐらっ",
+        "ぐら",
+        "ぐらり"
+      ],
+      "use": "ホバーで傾く（3D・チルト）",
+      "reduced": "none",
+      "motion": {
+        "trigger": "hover",
+        "effect": {
+          "rotateX": 8,
+          "rotateY": -12
+        },
+        "duration": 400,
+        "easing": "ease-out"
+      }
+    },
+    {
+      "id": "kyoro",
+      "names": [
+        "きょろっ",
+        "きょろ",
+        "きょろきょろ"
+      ],
+      "use": "マウスの位置に合わせて傾ける（3D・チルト）",
+      "reduced": "none",
+      "motion": {
+        "trigger": "tilt",
+        "effect": {
+          "rotateX": 10,
+          "rotateY": 12
+        },
+        "duration": 200,
+        "easing": "ease-out"
+      }
+    },
+    {
+      "id": "kui",
+      "names": [
+        "くいっ",
+        "くい"
+      ],
+      "use": "スクロールに合わせて傾ける（3D）",
+      "reduced": "none",
+      "motion": {
+        "trigger": "scroll",
+        "scroll": {
+          "source": "element",
+          "range": [
+            0,
+            100
+          ]
+        },
+        "effect": {
+          "rotateX": 16
+        },
+        "easing": "linear"
+      }
+    },
+    {
+      "id": "jiwa",
+      "names": [
+        "じわっ",
+        "じわ",
+        "じわじわ",
+        "じんわり"
+      ],
+      "use": "ホバー、選択",
+      "reduced": "opacity",
+      "motion": {
+        "trigger": "hover",
+        "effect": {
+          "opacity": 80,
+          "scale": 101
+        },
+        "duration": 600,
+        "easing": "ease-in-out"
+      }
+    }
+  ]
+}
