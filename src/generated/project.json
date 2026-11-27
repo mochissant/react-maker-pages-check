@@ -1,6 +1,6 @@
 {
   "id": "2b9dee02-3631-4d50-ba44-9f124e8add61",
-  "revision": 7,
+  "revision": 13,
   "startScreenId": "90ca1973-e446-4a92-88c4-f5edcf8a5178",
   "screens": [
     {
@@ -1597,7 +1597,7 @@
       "fullBleed": true,
       "description": "GitHub Pages 実環境テスト：LP。ダミーデータによる公開確認です。",
       "seo": {
-        "title": "Pages検証 v1｜LP",
+        "title": "Pages検証 v2｜LP",
         "ogImage": "https://placehold.co/1200x630/png?text=home"
       }
     },
@@ -1625,7 +1625,23 @@
           "type": "button",
           "style": {},
           "text": "カートを開く",
-          "targetScreenId": "e9affcf7-9e11-49a2-84d0-36eae251d5e4"
+          "targetScreenId": null,
+          "interactions": [
+            {
+              "id": "010c4ac5-f411-4798-8843-295eaeb3bfa6",
+              "trigger": "click",
+              "actions": [
+                {
+                  "type": "navigate",
+                  "screenId": "e9affcf7-9e11-49a2-84d0-36eae251d5e4"
+                },
+                {
+                  "type": "toast",
+                  "value": "完了しました。"
+                }
+              ]
+            }
+          ]
         }
       ],
       "description": "GitHub Pages 実環境テスト：商品一覧。ダミーデータによる公開確認です。",
@@ -1699,7 +1715,7 @@
           "type": "button",
           "style": {},
           "text": "模擬注文を確定する",
-          "targetScreenId": "dd408b86-b443-4b3f-9b8c-31f754bf96de",
+          "targetScreenId": null,
           "action": "submit"
         },
         {
@@ -1714,40 +1730,6 @@
       "seo": {
         "title": "Pages検証 v1｜注文確認",
         "ogImage": "https://placehold.co/1200x630/png?text=confirm"
-      }
-    },
-    {
-      "id": "dd408b86-b443-4b3f-9b8c-31f754bf96de",
-      "name": "注文完了",
-      "elements": [
-        {
-          "id": "76b84e1b-2399-4ae9-a068-026b166449a0",
-          "type": "heading",
-          "style": {
-            "fontSize": 24,
-            "fontWeight": 700
-          },
-          "text": "注文完了",
-          "level": 1
-        },
-        {
-          "id": "ffdec46f-3c0d-49d8-a092-92e3ad8248c2",
-          "type": "receipt",
-          "style": {}
-        },
-        {
-          "id": "a71d68d8-6870-45e5-99c8-3111392ed35d",
-          "type": "button",
-          "style": {},
-          "text": "新しい注文を始める",
-          "targetScreenId": "45c22070-73f5-4087-b031-b3e51685587b",
-          "action": "reset"
-        }
-      ],
-      "description": "GitHub Pages 実環境テスト：注文完了。ダミーデータによる公開確認です。",
-      "seo": {
-        "title": "Pages検証 v1｜注文完了",
-        "ogImage": "https://placehold.co/1200x630/png?text=complete"
       }
     }
   ],
@@ -2337,7 +2319,7 @@
       ]
     }
   ],
-  "updatedAt": "2026-11-27T01:55:29.861Z",
+  "updatedAt": "2026-11-27T02:11:41.371Z",
   "exportedContract": {
     "datasets": [
       {
@@ -2488,9 +2470,6 @@
     },
     "275de1c5-ef0f-46b9-9632-ef6599c68cda": {
       "e98e8654-8c65-440b-804a-1a41e472dbf0": "text-[24px] font-bold"
-    },
-    "dd408b86-b443-4b3f-9b8c-31f754bf96de": {
-      "76b84e1b-2399-4ae9-a068-026b166449a0": "text-[24px] font-bold"
     }
   },
   "elementSignatures": {
@@ -2598,9 +2577,6 @@
     },
     "275de1c5-ef0f-46b9-9632-ef6599c68cda": {
       "e98e8654-8c65-440b-804a-1a41e472dbf0": "1qdbyue"
-    },
-    "dd408b86-b443-4b3f-9b8c-31f754bf96de": {
-      "76b84e1b-2399-4ae9-a068-026b166449a0": "1qdbyue"
     }
   }
 }

@@ -222,9 +222,7 @@
       "codeName": "page-1",
       "path": "/page-1",
       "datasets": [],
-      "targets": [
-        "e9affcf7-9e11-49a2-84d0-36eae251d5e4"
-      ],
+      "targets": [],
       "link": "http://localhost:5173/?screen=45c22070-73f5-4087-b031-b3e51685587b"
     },
     {
@@ -244,20 +242,9 @@
       "path": "/page-3",
       "datasets": [],
       "targets": [
-        "dd408b86-b443-4b3f-9b8c-31f754bf96de",
         "e9affcf7-9e11-49a2-84d0-36eae251d5e4"
       ],
       "link": "http://localhost:5173/?screen=275de1c5-ef0f-46b9-9632-ef6599c68cda"
-    },
-    {
-      "id": "dd408b86-b443-4b3f-9b8c-31f754bf96de",
-      "codeName": "page-4",
-      "path": "/page-4",
-      "datasets": [],
-      "targets": [
-        "45c22070-73f5-4087-b031-b3e51685587b"
-      ],
-      "link": "http://localhost:5173/?screen=dd408b86-b443-4b3f-9b8c-31f754bf96de"
     }
   ],
   "components": [

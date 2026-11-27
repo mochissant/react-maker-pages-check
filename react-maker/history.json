@@ -3,6 +3,2411 @@
   "version": 1,
   "versions": [
     {
+      "id": "a0fbfcc1-c3ee-4e10-9dbc-e93838e77074",
+      "name": "自動の版 2026/11/27 11:09",
+      "createdAt": "2026-11-27T02:09:49.686Z",
+      "auto": true,
+      "periodic": true,
+      "snapshot": {
+        "id": "2b9dee02-3631-4d50-ba44-9f124e8add61",
+        "startScreenId": "90ca1973-e446-4a92-88c4-f5edcf8a5178",
+        "screens": [
+          {
+            "id": "90ca1973-e446-4a92-88c4-f5edcf8a5178",
+            "name": "LP",
+            "elements": [
+              {
+                "id": "474f9be5-002c-410e-96bc-4c7497d0bdbf",
+                "type": "container",
+                "componentId": "0fa818cb-5797-4139-a4da-d244786a3158",
+                "style": {},
+                "childOverrides": {}
+              },
+              {
+                "id": "d8bd4d7c-950a-445b-b16d-cbf574aa0062",
+                "type": "container",
+                "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": 12,
+                  "paddingLeft": 20,
+                  "paddingRight": 20,
+                  "borderRadius": 0
+                },
+                "children": [
+                  {
+                    "id": "41e19405-c00e-475a-bce7-6f3336026371",
+                    "type": "container",
+                    "style": {
+                      "display": "flex",
+                      "flexDirection": "column",
+                      "gap": 24,
+                      "width": "100%",
+                      "maxWidth": 1080,
+                      "marginLeft": "auto",
+                      "marginRight": "auto"
+                    },
+                    "children": [
+                      {
+                        "id": "30356261-bba4-4107-8367-d233b8b90126",
+                        "type": "container",
+                        "style": {
+                          "display": "flex",
+                          "flexDirection": "column",
+                          "gap": 16,
+                          "alignItems": "center",
+                          "textAlign": "center"
+                        },
+                        "children": [
+                          {
+                            "id": "1e1792b5-52ab-4e6e-85ce-a06671cd4b65",
+                            "type": "text",
+                            "style": {
+                              "margin": 0,
+                              "fontWeight": 700,
+                              "letterSpacing": 1
+                            },
+                            "text": "新しいサービス",
+                            "tokenRefs": {
+                              "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68"
+                            }
+                          },
+                          {
+                            "id": "ae1fb015-6080-4abb-94cf-6d0ec5bf6c25",
+                            "type": "heading",
+                            "style": {
+                              "margin": 0,
+                              "fontSize": "2.75rem",
+                              "lineHeight": 1.2
+                            },
+                            "text": "伝えたいことを、ひとことで。",
+                            "level": 1,
+                            "tokenRefs": {
+                              "fontSize": "f803bdef-dd07-4141-9736-ffa046c767a5"
+                            }
+                          },
+                          {
+                            "id": "6a46a972-0a6e-4e02-b48a-651be284ac2b",
+                            "type": "text",
+                            "style": {
+                              "margin": 0,
+                              "maxWidth": 640
+                            },
+                            "text": "何ができて、誰の役に立つのかを、二行ほどで説明します。読んだ人が次に何をすればよいか分かるようにします。",
+                            "tokenRefs": {
+                              "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68"
+                            }
+                          },
+                          {
+                            "id": "e77fb24f-c397-423e-a68f-23588aa0007e",
+                            "type": "container",
+                            "style": {
+                              "display": "flex",
+                              "flexDirection": "row",
+                              "gap": 12,
+                              "flexWrap": "wrap",
+                              "alignItems": "center",
+                              "justifyContent": "center"
+                            },
+                            "children": [
+                              {
+                                "id": "0e263890-ab14-4074-abc9-549dbf47340e",
+                                "type": "button",
+                                "style": {
+                                  "paddingTop": 12,
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 20,
+                                  "paddingRight": 20,
+                                  "borderWidth": 0,
+                                  "borderStyle": "solid",
+                                  "fontWeight": 700
+                                },
+                                "text": "無料ではじめる",
+                                "tokenRefs": {
+                                  "backgroundColor": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+                                  "color": "87e78ecd-7c79-4c72-8999-65f8a5f1f96c",
+                                  "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                                  "paddingTop": "b233360f-6345-40e5-90ea-829f807e7c19",
+                                  "paddingBottom": "b233360f-6345-40e5-90ea-829f807e7c19",
+                                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                                },
+                                "animations": [
+                                  {
+                                    "id": "3ed75c58-69b0-4f25-a511-02571be45181",
+                                    "delay": 0,
+                                    "trigger": "press",
+                                    "effect": {
+                                      "scale": 92
+                                    },
+                                    "spring": {
+                                      "stiffness": 420,
+                                      "damping": 11,
+                                      "mass": 1
+                                    },
+                                    "preset": "puni",
+                                    "strength": 100,
+                                    "speed": 100,
+                                    "reducedFallback": "none"
+                                  }
+                                ]
+                              },
+                              {
+                                "id": "04fc88e6-3fb6-4c0e-a916-61be4f4495a5",
+                                "type": "button",
+                                "style": {
+                                  "paddingTop": 12,
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 20,
+                                  "paddingRight": 20,
+                                  "borderWidth": 1,
+                                  "borderStyle": "solid",
+                                  "fontWeight": 700,
+                                  "backgroundColor": "#ffffff00"
+                                },
+                                "text": "資料を見る",
+                                "tokenRefs": {
+                                  "color": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+                                  "borderColor": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+                                  "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                                  "paddingTop": "b233360f-6345-40e5-90ea-829f807e7c19",
+                                  "paddingBottom": "b233360f-6345-40e5-90ea-829f807e7c19",
+                                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                                },
+                                "animations": [
+                                  {
+                                    "id": "f469cf2a-3af3-4049-beea-d5f66a7e46b2",
+                                    "delay": 0,
+                                    "trigger": "press",
+                                    "effect": {
+                                      "scale": 92
+                                    },
+                                    "spring": {
+                                      "stiffness": 420,
+                                      "damping": 11,
+                                      "mass": 1
+                                    },
+                                    "preset": "puni",
+                                    "strength": 100,
+                                    "speed": 100,
+                                    "reducedFallback": "none"
+                                  }
+                                ]
+                              }
+                            ],
+                            "name": "ボタンの並び",
+                            "tokenRefs": {
+                              "gap": "b233360f-6345-40e5-90ea-829f807e7c19"
+                            }
+                          }
+                        ],
+                        "name": "ヒーローの文",
+                        "tokenRefs": {
+                          "gap": "f1707823-613d-4ce9-bce9-1917a5b4b50b"
+                        }
+                      }
+                    ],
+                    "name": "内容の幅",
+                    "tokenRefs": {
+                      "gap": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                    }
+                  }
+                ],
+                "name": "ヒーロー",
+                "tokenRefs": {
+                  "paddingTop": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "paddingBottom": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "backgroundColor": "0188c498-cff5-4c13-8d82-59c049949bec",
+                  "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                },
+                "animations": [
+                  {
+                    "id": "af438dad-c5d4-4980-a24f-24bee4a75846",
+                    "delay": 0,
+                    "trigger": "inView",
+                    "effect": {
+                      "opacity": 0,
+                      "y": 16
+                    },
+                    "duration": 520,
+                    "easing": "emphasized",
+                    "stagger": {
+                      "interval": 80
+                    },
+                    "preset": "fuwa",
+                    "strength": 100,
+                    "speed": 100,
+                    "reducedFallback": "opacity"
+                  }
+                ]
+              },
+              {
+                "id": "1647223e-f291-41d6-b5d8-bf90123fc3f6",
+                "type": "container",
+                "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": 12,
+                  "paddingLeft": 20,
+                  "paddingRight": 20,
+                  "borderRadius": 0
+                },
+                "children": [
+                  {
+                    "id": "4b180227-6738-4d3d-9361-efd891b220c7",
+                    "type": "container",
+                    "style": {
+                      "display": "flex",
+                      "flexDirection": "column",
+                      "gap": 24,
+                      "width": "100%",
+                      "maxWidth": 1080,
+                      "marginLeft": "auto",
+                      "marginRight": "auto"
+                    },
+                    "children": [
+                      {
+                        "id": "937610cf-04aa-478c-93f4-73192878078a",
+                        "type": "heading",
+                        "style": {
+                          "margin": 0
+                        },
+                        "text": "選ばれる理由",
+                        "level": 2
+                      },
+                      {
+                        "id": "d255335d-8e0c-4219-bbdd-387f1aa77e31",
+                        "type": "container",
+                        "style": {
+                          "display": "grid",
+                          "flexDirection": "column",
+                          "gap": 20,
+                          "gridTemplateColumns": "repeat(auto-fit, minmax(min(240px, 100%), 1fr))"
+                        },
+                        "children": [
+                          {
+                            "id": "db81064c-1830-410d-986e-1afd344471d2",
+                            "type": "container",
+                            "style": {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "gap": 12,
+                              "padding": 24,
+                              "borderWidth": 1,
+                              "borderStyle": "solid"
+                            },
+                            "children": [
+                              {
+                                "id": "6f06c3e5-fb96-43c3-941e-795c03957f5e",
+                                "type": "icon",
+                                "style": {},
+                                "icon": {
+                                  "name": "star",
+                                  "node": [
+                                    [
+                                      "path",
+                                      {
+                                        "d": "M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"
+                                      }
+                                    ]
+                                  ]
+                                },
+                                "iconSize": 28,
+                                "tokenRefs": {
+                                  "color": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b"
+                                }
+                              },
+                              {
+                                "id": "2e94a34c-80a8-488b-b75a-536996d92f6b",
+                                "type": "heading",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "1.25rem"
+                                },
+                                "text": "かんたん",
+                                "level": 3,
+                                "tokenRefs": {
+                                  "fontSize": "c081fc49-3ef5-4975-a60a-f36e710b6dc4"
+                                }
+                              },
+                              {
+                                "id": "c2296f70-6b00-47f6-912e-9e15465c2b34",
+                                "type": "text",
+                                "style": {
+                                  "margin": 0
+                                },
+                                "text": "この特徴で、利用者の何が楽になるのかを書きます。",
+                                "tokenRefs": {
+                                  "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68"
+                                }
+                              }
+                            ],
+                            "name": "カード",
+                            "tokenRefs": {
+                              "borderColor": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+                              "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                              "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                              "padding": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                            },
+                            "states": {
+                              "hover": {
+                                "style": {
+                                  "boxShadow": "0px 8px 24px 0px #00000014"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "633a34d4-88ef-4f77-a209-d066965df61e",
+                            "type": "container",
+                            "style": {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "gap": 12,
+                              "padding": 24,
+                              "borderWidth": 1,
+                              "borderStyle": "solid"
+                            },
+                            "children": [
+                              {
+                                "id": "6e9975c4-0460-4c7d-b24e-e5ac1e3921fe",
+                                "type": "icon",
+                                "style": {},
+                                "icon": {
+                                  "name": "star",
+                                  "node": [
+                                    [
+                                      "path",
+                                      {
+                                        "d": "M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"
+                                      }
+                                    ]
+                                  ]
+                                },
+                                "iconSize": 28,
+                                "tokenRefs": {
+                                  "color": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b"
+                                }
+                              },
+                              {
+                                "id": "06cfd87a-ef27-463c-a6ec-e3917ff97d4a",
+                                "type": "heading",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "1.25rem"
+                                },
+                                "text": "はやい",
+                                "level": 3,
+                                "tokenRefs": {
+                                  "fontSize": "c081fc49-3ef5-4975-a60a-f36e710b6dc4"
+                                }
+                              },
+                              {
+                                "id": "ccdd6fd0-8c44-49e1-9cfa-93f0846b628d",
+                                "type": "text",
+                                "style": {
+                                  "margin": 0
+                                },
+                                "text": "この特徴で、利用者の何が楽になるのかを書きます。",
+                                "tokenRefs": {
+                                  "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68"
+                                }
+                              }
+                            ],
+                            "name": "カード",
+                            "tokenRefs": {
+                              "borderColor": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+                              "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                              "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                              "padding": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                            },
+                            "states": {
+                              "hover": {
+                                "style": {
+                                  "boxShadow": "0px 8px 24px 0px #00000014"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "0e159e83-4d48-4d29-bc73-dcfc4da7b9fb",
+                            "type": "container",
+                            "style": {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "gap": 12,
+                              "padding": 24,
+                              "borderWidth": 1,
+                              "borderStyle": "solid"
+                            },
+                            "children": [
+                              {
+                                "id": "a78359f6-5f3a-435f-ae52-14dffb756e81",
+                                "type": "icon",
+                                "style": {},
+                                "icon": {
+                                  "name": "star",
+                                  "node": [
+                                    [
+                                      "path",
+                                      {
+                                        "d": "M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"
+                                      }
+                                    ]
+                                  ]
+                                },
+                                "iconSize": 28,
+                                "tokenRefs": {
+                                  "color": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b"
+                                }
+                              },
+                              {
+                                "id": "e6f39185-8711-4978-843a-9ba6588ea3ea",
+                                "type": "heading",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "1.25rem"
+                                },
+                                "text": "あんしん",
+                                "level": 3,
+                                "tokenRefs": {
+                                  "fontSize": "c081fc49-3ef5-4975-a60a-f36e710b6dc4"
+                                }
+                              },
+                              {
+                                "id": "cd8698ae-469e-4e80-a06f-9c7eebc7e5b4",
+                                "type": "text",
+                                "style": {
+                                  "margin": 0
+                                },
+                                "text": "この特徴で、利用者の何が楽になるのかを書きます。",
+                                "tokenRefs": {
+                                  "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68"
+                                }
+                              }
+                            ],
+                            "name": "カード",
+                            "tokenRefs": {
+                              "borderColor": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+                              "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                              "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                              "padding": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                            },
+                            "states": {
+                              "hover": {
+                                "style": {
+                                  "boxShadow": "0px 8px 24px 0px #00000014"
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "name": "カードの並び",
+                        "tokenRefs": {
+                          "gap": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                        }
+                      }
+                    ],
+                    "name": "内容の幅",
+                    "tokenRefs": {
+                      "gap": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                    }
+                  }
+                ],
+                "name": "特徴",
+                "tokenRefs": {
+                  "paddingTop": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "paddingBottom": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                },
+                "animations": [
+                  {
+                    "id": "37537def-3464-4fd7-9beb-de01a367f35c",
+                    "delay": 0,
+                    "trigger": "inView",
+                    "effect": {
+                      "opacity": 0,
+                      "y": 16
+                    },
+                    "duration": 520,
+                    "easing": "emphasized",
+                    "stagger": {
+                      "interval": 80
+                    },
+                    "preset": "fuwa",
+                    "strength": 100,
+                    "speed": 100,
+                    "reducedFallback": "opacity"
+                  }
+                ]
+              },
+              {
+                "id": "2c218eb1-c492-4c53-ab94-ae825efda124",
+                "type": "container",
+                "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": 12,
+                  "paddingLeft": 20,
+                  "paddingRight": 20,
+                  "borderRadius": 0
+                },
+                "children": [
+                  {
+                    "id": "508a96e9-07d8-41fe-8d68-a8d65f4778e0",
+                    "type": "container",
+                    "style": {
+                      "display": "flex",
+                      "flexDirection": "column",
+                      "gap": 24,
+                      "width": "100%",
+                      "maxWidth": 1080,
+                      "marginLeft": "auto",
+                      "marginRight": "auto"
+                    },
+                    "children": [
+                      {
+                        "id": "74585018-b6fd-4138-adc7-aceb9f8aec70",
+                        "type": "container",
+                        "style": {
+                          "display": "grid",
+                          "flexDirection": "column",
+                          "gap": 20,
+                          "gridTemplateColumns": "repeat(auto-fit, minmax(min(180px, 100%), 1fr))"
+                        },
+                        "children": [
+                          {
+                            "id": "59c1f94c-bd88-4342-a6f1-b00f4895dd23",
+                            "type": "container",
+                            "style": {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "gap": 4,
+                              "alignItems": "center"
+                            },
+                            "children": [
+                              {
+                                "id": "2ab25b13-c8f5-450b-af85-30c08e8569a9",
+                                "type": "heading",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "2.5rem"
+                                },
+                                "text": "1,200社",
+                                "level": 3,
+                                "tokenRefs": {
+                                  "fontSize": "1fa7cb14-b4f1-49af-88a0-fccce5e39587"
+                                }
+                              },
+                              {
+                                "id": "a8d633f7-7f72-4592-a5a0-2861b33b8c36",
+                                "type": "text",
+                                "style": {
+                                  "margin": 0
+                                },
+                                "text": "導入企業",
+                                "tokenRefs": {
+                                  "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68"
+                                }
+                              }
+                            ],
+                            "name": "数字",
+                            "tokenRefs": {
+                              "color": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+                              "gap": "d4064143-1d3e-4b49-ae6d-4a9a30c94031"
+                            }
+                          },
+                          {
+                            "id": "4b511539-50d2-4c47-8d57-ec697792daf1",
+                            "type": "container",
+                            "style": {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "gap": 4,
+                              "alignItems": "center"
+                            },
+                            "children": [
+                              {
+                                "id": "e015ee27-8f0f-4d7f-9808-dbe7b3ce797b",
+                                "type": "heading",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "2.5rem"
+                                },
+                                "text": "98%",
+                                "level": 3,
+                                "tokenRefs": {
+                                  "fontSize": "1fa7cb14-b4f1-49af-88a0-fccce5e39587"
+                                }
+                              },
+                              {
+                                "id": "99ab194b-92b2-4bcf-a72d-b021b4ac60f5",
+                                "type": "text",
+                                "style": {
+                                  "margin": 0
+                                },
+                                "text": "継続率",
+                                "tokenRefs": {
+                                  "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68"
+                                }
+                              }
+                            ],
+                            "name": "数字",
+                            "tokenRefs": {
+                              "color": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+                              "gap": "d4064143-1d3e-4b49-ae6d-4a9a30c94031"
+                            }
+                          },
+                          {
+                            "id": "7bb25f17-58fc-4a6a-b2a2-f051b6de3e1c",
+                            "type": "container",
+                            "style": {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "gap": 4,
+                              "alignItems": "center"
+                            },
+                            "children": [
+                              {
+                                "id": "4d0d6c59-3d03-483c-9382-6533ad24675a",
+                                "type": "heading",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "2.5rem"
+                                },
+                                "text": "24時間",
+                                "level": 3,
+                                "tokenRefs": {
+                                  "fontSize": "1fa7cb14-b4f1-49af-88a0-fccce5e39587"
+                                }
+                              },
+                              {
+                                "id": "38f28612-ed8a-49be-b62f-baa72dd454d9",
+                                "type": "text",
+                                "style": {
+                                  "margin": 0
+                                },
+                                "text": "サポート",
+                                "tokenRefs": {
+                                  "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68"
+                                }
+                              }
+                            ],
+                            "name": "数字",
+                            "tokenRefs": {
+                              "color": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+                              "gap": "d4064143-1d3e-4b49-ae6d-4a9a30c94031"
+                            }
+                          }
+                        ],
+                        "name": "数字の並び",
+                        "tokenRefs": {
+                          "gap": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                        }
+                      }
+                    ],
+                    "name": "内容の幅",
+                    "tokenRefs": {
+                      "gap": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                    }
+                  }
+                ],
+                "name": "数字",
+                "tokenRefs": {
+                  "paddingTop": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "paddingBottom": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "backgroundColor": "0188c498-cff5-4c13-8d82-59c049949bec",
+                  "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                },
+                "animations": [
+                  {
+                    "id": "4da7d909-4479-49e0-94dc-348b4a67a06f",
+                    "delay": 0,
+                    "trigger": "inView",
+                    "effect": {
+                      "opacity": 0,
+                      "y": 16
+                    },
+                    "duration": 520,
+                    "easing": "emphasized",
+                    "stagger": {
+                      "interval": 80
+                    },
+                    "preset": "fuwa",
+                    "strength": 100,
+                    "speed": 100,
+                    "reducedFallback": "opacity"
+                  }
+                ]
+              },
+              {
+                "id": "026cb3e1-2c93-4888-acff-8475ca848488",
+                "type": "container",
+                "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": 12,
+                  "paddingLeft": 20,
+                  "paddingRight": 20,
+                  "borderRadius": 0
+                },
+                "children": [
+                  {
+                    "id": "2624da1b-8838-4be9-831c-eeeafe339b47",
+                    "type": "container",
+                    "style": {
+                      "display": "flex",
+                      "flexDirection": "column",
+                      "gap": 24,
+                      "width": "100%",
+                      "maxWidth": 1080,
+                      "marginLeft": "auto",
+                      "marginRight": "auto"
+                    },
+                    "children": [
+                      {
+                        "id": "ca99eda0-008d-4ee1-b2c6-9ed20b8a486f",
+                        "type": "heading",
+                        "style": {
+                          "margin": 0
+                        },
+                        "text": "お客様の声",
+                        "level": 2
+                      },
+                      {
+                        "id": "a47ffa6f-4925-4f7e-8680-c0cb95578d66",
+                        "type": "container",
+                        "style": {
+                          "display": "grid",
+                          "flexDirection": "column",
+                          "gap": 20,
+                          "gridTemplateColumns": "repeat(auto-fit, minmax(min(280px, 100%), 1fr))"
+                        },
+                        "children": [
+                          {
+                            "id": "bed0f8f9-0792-4336-a4c7-1fb4e3d51c04",
+                            "type": "container",
+                            "style": {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "gap": 12,
+                              "padding": 24,
+                              "borderWidth": 1,
+                              "borderStyle": "solid"
+                            },
+                            "children": [
+                              {
+                                "id": "655a5948-2c0b-4622-83b5-34f3b2369519",
+                                "type": "text",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "1.125rem",
+                                  "lineHeight": 1.7
+                                },
+                                "text": "「作業時間が半分になりました。」",
+                                "tokenRefs": {
+                                  "fontSize": "62ddd0f1-94d6-4337-86d2-5f48be944436"
+                                }
+                              },
+                              {
+                                "id": "cc6d9084-8365-4a36-92bf-295cdbc92663",
+                                "type": "text",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "0.875rem"
+                                },
+                                "text": "株式会社サンプル　担当者 1",
+                                "tokenRefs": {
+                                  "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68",
+                                  "fontSize": "b804f3f0-fc3f-4932-9d34-c9883f18bf1c"
+                                }
+                              }
+                            ],
+                            "name": "カード",
+                            "tokenRefs": {
+                              "borderColor": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+                              "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                              "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                              "padding": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                            },
+                            "states": {
+                              "hover": {
+                                "style": {
+                                  "boxShadow": "0px 8px 24px 0px #00000014"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "65963249-ab54-486f-8083-60c5e1bb1923",
+                            "type": "container",
+                            "style": {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "gap": 12,
+                              "padding": 24,
+                              "borderWidth": 1,
+                              "borderStyle": "solid"
+                            },
+                            "children": [
+                              {
+                                "id": "505ada2a-44b6-4ad6-9fb0-b4db85a007a4",
+                                "type": "text",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "1.125rem",
+                                  "lineHeight": 1.7
+                                },
+                                "text": "「チームの誰でも使えます。」",
+                                "tokenRefs": {
+                                  "fontSize": "62ddd0f1-94d6-4337-86d2-5f48be944436"
+                                }
+                              },
+                              {
+                                "id": "bc8b4d58-76cf-43b5-8811-04ec304d3e42",
+                                "type": "text",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "0.875rem"
+                                },
+                                "text": "株式会社サンプル　担当者 2",
+                                "tokenRefs": {
+                                  "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68",
+                                  "fontSize": "b804f3f0-fc3f-4932-9d34-c9883f18bf1c"
+                                }
+                              }
+                            ],
+                            "name": "カード",
+                            "tokenRefs": {
+                              "borderColor": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+                              "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                              "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                              "padding": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                            },
+                            "states": {
+                              "hover": {
+                                "style": {
+                                  "boxShadow": "0px 8px 24px 0px #00000014"
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "name": "カードの並び",
+                        "tokenRefs": {
+                          "gap": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                        }
+                      }
+                    ],
+                    "name": "内容の幅",
+                    "tokenRefs": {
+                      "gap": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                    }
+                  }
+                ],
+                "name": "お客様の声",
+                "tokenRefs": {
+                  "paddingTop": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "paddingBottom": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                },
+                "animations": [
+                  {
+                    "id": "970c4f61-d70f-4d10-b830-02e974a43d3c",
+                    "delay": 0,
+                    "trigger": "inView",
+                    "effect": {
+                      "opacity": 0,
+                      "y": 16
+                    },
+                    "duration": 520,
+                    "easing": "emphasized",
+                    "stagger": {
+                      "interval": 80
+                    },
+                    "preset": "fuwa",
+                    "strength": 100,
+                    "speed": 100,
+                    "reducedFallback": "opacity"
+                  }
+                ]
+              },
+              {
+                "id": "cde0af38-5386-4142-94d3-f94400e0542a",
+                "type": "container",
+                "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": 12,
+                  "paddingLeft": 20,
+                  "paddingRight": 20,
+                  "borderRadius": 0
+                },
+                "children": [
+                  {
+                    "id": "dc0e5272-3ee6-4af2-8d02-d545db9cc14b",
+                    "type": "container",
+                    "style": {
+                      "display": "flex",
+                      "flexDirection": "column",
+                      "gap": 24,
+                      "width": "100%",
+                      "maxWidth": 1080,
+                      "marginLeft": "auto",
+                      "marginRight": "auto"
+                    },
+                    "children": [
+                      {
+                        "id": "1d369285-4557-47c2-80a2-749baf62f5ac",
+                        "type": "heading",
+                        "style": {
+                          "margin": 0
+                        },
+                        "text": "料金",
+                        "level": 2
+                      },
+                      {
+                        "id": "2748a7f5-e0da-4e3a-b105-a186ca59720e",
+                        "type": "container",
+                        "style": {
+                          "display": "grid",
+                          "flexDirection": "column",
+                          "gap": 20,
+                          "gridTemplateColumns": "repeat(auto-fit, minmax(min(240px, 100%), 1fr))"
+                        },
+                        "children": [
+                          {
+                            "id": "53223ce7-2e6a-410d-a360-c18d89615195",
+                            "type": "container",
+                            "style": {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "gap": 12,
+                              "padding": 24,
+                              "borderWidth": 1,
+                              "borderStyle": "solid"
+                            },
+                            "children": [
+                              {
+                                "id": "c7e02c47-0f82-45e3-9c8d-ad3260219061",
+                                "type": "heading",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "1.125rem"
+                                },
+                                "text": "ライト",
+                                "level": 3,
+                                "tokenRefs": {
+                                  "fontSize": "62ddd0f1-94d6-4337-86d2-5f48be944436"
+                                }
+                              },
+                              {
+                                "id": "7413bd05-ea86-44a8-8852-9b0c53f40764",
+                                "type": "heading",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "2rem"
+                                },
+                                "text": "0円",
+                                "level": 4,
+                                "tokenRefs": {
+                                  "fontSize": "d73690b4-7d0f-4dd8-9a89-31d6e534aacf"
+                                }
+                              },
+                              {
+                                "id": "3257cc4d-2e60-4e40-a7dd-9ad8476c1ddd",
+                                "type": "text",
+                                "style": {
+                                  "margin": 0
+                                },
+                                "text": "個人で試す",
+                                "tokenRefs": {
+                                  "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68"
+                                }
+                              },
+                              {
+                                "id": "fdedbf12-c075-41f9-9b4b-5116d1c16c88",
+                                "type": "button",
+                                "style": {
+                                  "paddingTop": 12,
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 20,
+                                  "paddingRight": 20,
+                                  "borderWidth": 1,
+                                  "borderStyle": "solid",
+                                  "fontWeight": 700,
+                                  "backgroundColor": "#ffffff00"
+                                },
+                                "text": "選ぶ",
+                                "tokenRefs": {
+                                  "color": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+                                  "borderColor": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+                                  "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                                  "paddingTop": "b233360f-6345-40e5-90ea-829f807e7c19",
+                                  "paddingBottom": "b233360f-6345-40e5-90ea-829f807e7c19",
+                                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                                },
+                                "animations": [
+                                  {
+                                    "id": "f31b358b-a26f-465b-9aab-af3a163f55df",
+                                    "delay": 0,
+                                    "trigger": "press",
+                                    "effect": {
+                                      "scale": 92
+                                    },
+                                    "spring": {
+                                      "stiffness": 420,
+                                      "damping": 11,
+                                      "mass": 1
+                                    },
+                                    "preset": "puni",
+                                    "strength": 100,
+                                    "speed": 100,
+                                    "reducedFallback": "none"
+                                  }
+                                ]
+                              }
+                            ],
+                            "name": "カード",
+                            "tokenRefs": {
+                              "borderColor": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+                              "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                              "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                              "padding": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                            },
+                            "states": {
+                              "hover": {
+                                "style": {
+                                  "boxShadow": "0px 8px 24px 0px #00000014"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "e954ed7b-b0e1-49aa-b1ee-a7dcece8c129",
+                            "type": "container",
+                            "style": {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "gap": 12,
+                              "padding": 24,
+                              "borderWidth": 2,
+                              "borderStyle": "solid"
+                            },
+                            "children": [
+                              {
+                                "id": "9e5aeb71-1c57-4572-8d90-420b176a1c37",
+                                "type": "heading",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "1.125rem"
+                                },
+                                "text": "スタンダード",
+                                "level": 3,
+                                "tokenRefs": {
+                                  "fontSize": "62ddd0f1-94d6-4337-86d2-5f48be944436"
+                                }
+                              },
+                              {
+                                "id": "ca1034ff-c812-4813-a951-797a5487047d",
+                                "type": "heading",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "2rem"
+                                },
+                                "text": "2,980円",
+                                "level": 4,
+                                "tokenRefs": {
+                                  "fontSize": "d73690b4-7d0f-4dd8-9a89-31d6e534aacf"
+                                }
+                              },
+                              {
+                                "id": "062b1a8d-ba25-463e-bacb-32fe2ac81fc8",
+                                "type": "text",
+                                "style": {
+                                  "margin": 0
+                                },
+                                "text": "チームで使う",
+                                "tokenRefs": {
+                                  "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68"
+                                }
+                              },
+                              {
+                                "id": "93f445f6-fcd8-4a77-b77b-fcbc4006c9d7",
+                                "type": "button",
+                                "style": {
+                                  "paddingTop": 12,
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 20,
+                                  "paddingRight": 20,
+                                  "borderWidth": 0,
+                                  "borderStyle": "solid",
+                                  "fontWeight": 700
+                                },
+                                "text": "このプランにする",
+                                "tokenRefs": {
+                                  "backgroundColor": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+                                  "color": "87e78ecd-7c79-4c72-8999-65f8a5f1f96c",
+                                  "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                                  "paddingTop": "b233360f-6345-40e5-90ea-829f807e7c19",
+                                  "paddingBottom": "b233360f-6345-40e5-90ea-829f807e7c19",
+                                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                                },
+                                "animations": [
+                                  {
+                                    "id": "54bc36c3-2d2b-4b45-9ada-f9a8914cf849",
+                                    "delay": 0,
+                                    "trigger": "press",
+                                    "effect": {
+                                      "scale": 92
+                                    },
+                                    "spring": {
+                                      "stiffness": 420,
+                                      "damping": 11,
+                                      "mass": 1
+                                    },
+                                    "preset": "puni",
+                                    "strength": 100,
+                                    "speed": 100,
+                                    "reducedFallback": "none"
+                                  }
+                                ]
+                              }
+                            ],
+                            "name": "カード",
+                            "tokenRefs": {
+                              "borderColor": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+                              "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                              "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                              "padding": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                            },
+                            "states": {
+                              "hover": {
+                                "style": {
+                                  "boxShadow": "0px 8px 24px 0px #00000014"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "fea0c5b4-8125-46b6-afa6-78999bfa8434",
+                            "type": "container",
+                            "style": {
+                              "display": "flex",
+                              "flexDirection": "column",
+                              "gap": 12,
+                              "padding": 24,
+                              "borderWidth": 1,
+                              "borderStyle": "solid"
+                            },
+                            "children": [
+                              {
+                                "id": "8da59e9d-9f29-4edb-9a91-2b6e0084339c",
+                                "type": "heading",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "1.125rem"
+                                },
+                                "text": "ビジネス",
+                                "level": 3,
+                                "tokenRefs": {
+                                  "fontSize": "62ddd0f1-94d6-4337-86d2-5f48be944436"
+                                }
+                              },
+                              {
+                                "id": "9ac1e983-68a2-4d1a-87cf-72af80d3fc43",
+                                "type": "heading",
+                                "style": {
+                                  "margin": 0,
+                                  "fontSize": "2rem"
+                                },
+                                "text": "要相談",
+                                "level": 4,
+                                "tokenRefs": {
+                                  "fontSize": "d73690b4-7d0f-4dd8-9a89-31d6e534aacf"
+                                }
+                              },
+                              {
+                                "id": "a01e050e-d74d-4358-b354-571bac80ccd5",
+                                "type": "text",
+                                "style": {
+                                  "margin": 0
+                                },
+                                "text": "組織で使う",
+                                "tokenRefs": {
+                                  "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68"
+                                }
+                              },
+                              {
+                                "id": "957eb46f-7eb5-42c3-afa9-45ade072d333",
+                                "type": "button",
+                                "style": {
+                                  "paddingTop": 12,
+                                  "paddingBottom": 12,
+                                  "paddingLeft": 20,
+                                  "paddingRight": 20,
+                                  "borderWidth": 1,
+                                  "borderStyle": "solid",
+                                  "fontWeight": 700,
+                                  "backgroundColor": "#ffffff00"
+                                },
+                                "text": "選ぶ",
+                                "tokenRefs": {
+                                  "color": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+                                  "borderColor": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+                                  "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                                  "paddingTop": "b233360f-6345-40e5-90ea-829f807e7c19",
+                                  "paddingBottom": "b233360f-6345-40e5-90ea-829f807e7c19",
+                                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                                },
+                                "animations": [
+                                  {
+                                    "id": "c358dcde-1900-4363-8c16-bfb62b145748",
+                                    "delay": 0,
+                                    "trigger": "press",
+                                    "effect": {
+                                      "scale": 92
+                                    },
+                                    "spring": {
+                                      "stiffness": 420,
+                                      "damping": 11,
+                                      "mass": 1
+                                    },
+                                    "preset": "puni",
+                                    "strength": 100,
+                                    "speed": 100,
+                                    "reducedFallback": "none"
+                                  }
+                                ]
+                              }
+                            ],
+                            "name": "カード",
+                            "tokenRefs": {
+                              "borderColor": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+                              "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                              "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                              "padding": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                            },
+                            "states": {
+                              "hover": {
+                                "style": {
+                                  "boxShadow": "0px 8px 24px 0px #00000014"
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "name": "カードの並び",
+                        "tokenRefs": {
+                          "gap": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                        }
+                      }
+                    ],
+                    "name": "内容の幅",
+                    "tokenRefs": {
+                      "gap": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                    }
+                  }
+                ],
+                "name": "料金",
+                "tokenRefs": {
+                  "paddingTop": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "paddingBottom": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                },
+                "animations": [
+                  {
+                    "id": "ff5e21f8-fd62-4203-bee8-d4fd9c1e4c24",
+                    "delay": 0,
+                    "trigger": "inView",
+                    "effect": {
+                      "opacity": 0,
+                      "y": 16
+                    },
+                    "duration": 520,
+                    "easing": "emphasized",
+                    "stagger": {
+                      "interval": 80
+                    },
+                    "preset": "fuwa",
+                    "strength": 100,
+                    "speed": 100,
+                    "reducedFallback": "opacity"
+                  }
+                ]
+              },
+              {
+                "id": "fcf2763d-c967-42fe-87cd-97a660d97285",
+                "type": "container",
+                "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": 12,
+                  "paddingLeft": 20,
+                  "paddingRight": 20,
+                  "borderRadius": 0
+                },
+                "children": [
+                  {
+                    "id": "5a798aa7-ce90-432b-a0f2-6b320eec2db1",
+                    "type": "container",
+                    "style": {
+                      "display": "flex",
+                      "flexDirection": "column",
+                      "gap": 24,
+                      "width": "100%",
+                      "maxWidth": 1080,
+                      "marginLeft": "auto",
+                      "marginRight": "auto"
+                    },
+                    "children": [
+                      {
+                        "id": "37b68399-8faf-4748-afbd-f178a9483b07",
+                        "type": "heading",
+                        "style": {
+                          "margin": 0
+                        },
+                        "text": "よくある質問",
+                        "level": 2
+                      },
+                      {
+                        "id": "4a65f982-913e-409d-a192-ae8b443aa7ee",
+                        "type": "container",
+                        "style": {
+                          "display": "flex",
+                          "flexDirection": "column",
+                          "gap": 0
+                        },
+                        "children": [
+                          {
+                            "id": "7c43f34c-e0d7-440f-b334-c7dffea24553",
+                            "type": "container",
+                            "componentId": "a73b4ae1-da66-417a-9145-bf7e0fda1cfb",
+                            "style": {},
+                            "childOverrides": {
+                              "f62e7535-157b-487f-988c-922538d11981": {
+                                "text": "無料で使えますか？"
+                              },
+                              "b904df44-0375-4c89-b95f-96b214cc72b7": {
+                                "text": "ライトプランは無料です。"
+                              }
+                            }
+                          },
+                          {
+                            "id": "a4fe3ffd-2993-4003-8c2f-d8ddcdaa7290",
+                            "type": "container",
+                            "componentId": "a73b4ae1-da66-417a-9145-bf7e0fda1cfb",
+                            "style": {},
+                            "childOverrides": {
+                              "f62e7535-157b-487f-988c-922538d11981": {
+                                "text": "解約はいつでもできますか？"
+                              },
+                              "b904df44-0375-4c89-b95f-96b214cc72b7": {
+                                "text": "いつでも解約できます。"
+                              }
+                            }
+                          }
+                        ],
+                        "name": "質問の一覧"
+                      }
+                    ],
+                    "name": "内容の幅",
+                    "tokenRefs": {
+                      "gap": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                    }
+                  }
+                ],
+                "name": "よくある質問",
+                "tokenRefs": {
+                  "paddingTop": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "paddingBottom": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                },
+                "animations": [
+                  {
+                    "id": "16808b18-efd6-4292-ab71-6a7d2f0be8ef",
+                    "delay": 0,
+                    "trigger": "inView",
+                    "effect": {
+                      "opacity": 0,
+                      "y": 16
+                    },
+                    "duration": 520,
+                    "easing": "emphasized",
+                    "stagger": {
+                      "interval": 80
+                    },
+                    "preset": "fuwa",
+                    "strength": 100,
+                    "speed": 100,
+                    "reducedFallback": "opacity"
+                  }
+                ]
+              },
+              {
+                "id": "9e299b0e-b4b6-4328-9e75-d6e8b25dfcf4",
+                "type": "container",
+                "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": 12,
+                  "paddingLeft": 20,
+                  "paddingRight": 20,
+                  "borderRadius": 0
+                },
+                "children": [
+                  {
+                    "id": "127a04af-aaa0-4958-9620-dbbef566cc7a",
+                    "type": "container",
+                    "style": {
+                      "display": "flex",
+                      "flexDirection": "column",
+                      "gap": 24,
+                      "width": "100%",
+                      "maxWidth": 1080,
+                      "marginLeft": "auto",
+                      "marginRight": "auto"
+                    },
+                    "children": [
+                      {
+                        "id": "224be617-11d8-4583-8125-f717a91e4592",
+                        "type": "heading",
+                        "style": {
+                          "margin": 0
+                        },
+                        "text": "お問い合わせ",
+                        "level": 2
+                      },
+                      {
+                        "id": "fea9e2b8-ad23-4e23-833a-0b335e407393",
+                        "type": "container",
+                        "style": {
+                          "display": "flex",
+                          "flexDirection": "column",
+                          "gap": 16,
+                          "maxWidth": 560
+                        },
+                        "children": [
+                          {
+                            "id": "593ae676-5a57-4830-ab8a-62144ee930cd",
+                            "type": "custom",
+                            "style": {},
+                            "children": [
+                              {
+                                "id": "b0b05271-9510-4683-8dea-54b432d65c8f",
+                                "type": "custom",
+                                "style": {},
+                                "children": [],
+                                "name": "お名前",
+                                "customComponentId": "form-field",
+                                "customValues": {
+                                  "label": "お名前",
+                                  "kind": "テキスト"
+                                }
+                              },
+                              {
+                                "id": "2b73a009-dc63-47f5-ac4a-303e128f67b5",
+                                "type": "custom",
+                                "style": {},
+                                "children": [],
+                                "name": "メールアドレス",
+                                "customComponentId": "form-field",
+                                "customValues": {
+                                  "label": "メールアドレス",
+                                  "kind": "メール"
+                                }
+                              },
+                              {
+                                "id": "c7dd498f-8068-4821-ac23-efc3c2239ea1",
+                                "type": "custom",
+                                "style": {},
+                                "children": [],
+                                "name": "内容",
+                                "customComponentId": "form-field",
+                                "customValues": {
+                                  "label": "内容",
+                                  "kind": "複数行"
+                                }
+                              }
+                            ],
+                            "name": "フォーム",
+                            "customComponentId": "form",
+                            "customValues": {
+                              "name": "contact",
+                              "submitLabel": "送信する"
+                            }
+                          }
+                        ],
+                        "tokenRefs": {
+                          "gap": "f1707823-613d-4ce9-bce9-1917a5b4b50b"
+                        }
+                      }
+                    ],
+                    "name": "内容の幅",
+                    "tokenRefs": {
+                      "gap": "b4beca67-657b-4bf6-a27d-fc207e6ba139"
+                    }
+                  }
+                ],
+                "name": "問い合わせ",
+                "tokenRefs": {
+                  "paddingTop": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "paddingBottom": "6c992461-281b-452b-bd37-59c9277b59b6",
+                  "backgroundColor": "0188c498-cff5-4c13-8d82-59c049949bec",
+                  "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                },
+                "animations": [
+                  {
+                    "id": "7f6a6973-0d69-4d5c-90f2-369680c8c2ab",
+                    "delay": 0,
+                    "trigger": "inView",
+                    "effect": {
+                      "opacity": 0,
+                      "y": 16
+                    },
+                    "duration": 520,
+                    "easing": "emphasized",
+                    "stagger": {
+                      "interval": 80
+                    },
+                    "preset": "fuwa",
+                    "strength": 100,
+                    "speed": 100,
+                    "reducedFallback": "opacity"
+                  }
+                ]
+              },
+              {
+                "id": "cc428c9c-25a7-4ad8-9678-e060fee9988a",
+                "type": "container",
+                "componentId": "dd61f41d-3d79-426d-be82-4e209705c08b",
+                "style": {},
+                "childOverrides": {}
+              }
+            ],
+            "fullBleed": true,
+            "description": "GitHub Pages 実環境テスト：LP。ダミーデータによる公開確認です。",
+            "seo": {
+              "title": "Pages検証 v2｜LP",
+              "ogImage": "https://placehold.co/1200x630/png?text=home"
+            }
+          },
+          {
+            "id": "45c22070-73f5-4087-b031-b3e51685587b",
+            "name": "商品一覧",
+            "elements": [
+              {
+                "id": "e0d69fdb-cba1-4d14-a813-2ef740e3e570",
+                "type": "heading",
+                "style": {
+                  "fontSize": 24,
+                  "fontWeight": 700
+                },
+                "text": "商品一覧",
+                "level": 1
+              },
+              {
+                "id": "171504c0-ad0b-40ef-8a38-5c334f5a6575",
+                "type": "catalog",
+                "style": {}
+              },
+              {
+                "id": "4248e305-ebcd-4836-9a8b-9ac068f88205",
+                "type": "button",
+                "style": {},
+                "text": "カートを開く",
+                "targetScreenId": null,
+                "interactions": [
+                  {
+                    "id": "010c4ac5-f411-4798-8843-295eaeb3bfa6",
+                    "trigger": "click",
+                    "actions": [
+                      {
+                        "type": "navigate",
+                        "screenId": "e9affcf7-9e11-49a2-84d0-36eae251d5e4"
+                      },
+                      {
+                        "type": "toast",
+                        "value": "完了しました。"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "description": "GitHub Pages 実環境テスト：商品一覧。ダミーデータによる公開確認です。",
+            "seo": {
+              "title": "Pages検証 v1｜商品一覧",
+              "ogImage": "https://placehold.co/1200x630/png?text=catalog"
+            }
+          },
+          {
+            "id": "e9affcf7-9e11-49a2-84d0-36eae251d5e4",
+            "name": "カート",
+            "elements": [
+              {
+                "id": "8f58cd77-5bd4-49a8-9760-d751af8a853c",
+                "type": "heading",
+                "style": {
+                  "fontSize": 24,
+                  "fontWeight": 700
+                },
+                "text": "カート",
+                "level": 1
+              },
+              {
+                "id": "dd0a7520-dbdf-4312-87b3-46e32529a050",
+                "type": "cart",
+                "style": {}
+              },
+              {
+                "id": "987c081f-0670-4bc3-9d64-54cf6994ed2b",
+                "type": "button",
+                "style": {},
+                "text": "注文を確認する",
+                "targetScreenId": "275de1c5-ef0f-46b9-9632-ef6599c68cda",
+                "action": "quote"
+              },
+              {
+                "id": "5c5fd31e-fe6d-42c7-804f-fd47444f77fe",
+                "type": "button",
+                "style": {},
+                "text": "商品一覧に戻る",
+                "targetScreenId": "45c22070-73f5-4087-b031-b3e51685587b"
+              }
+            ],
+            "description": "GitHub Pages 実環境テスト：カート。ダミーデータによる公開確認です。",
+            "seo": {
+              "title": "Pages検証 v1｜カート",
+              "ogImage": "https://placehold.co/1200x630/png?text=cart"
+            }
+          },
+          {
+            "id": "275de1c5-ef0f-46b9-9632-ef6599c68cda",
+            "name": "注文確認",
+            "elements": [
+              {
+                "id": "e98e8654-8c65-440b-804a-1a41e472dbf0",
+                "type": "heading",
+                "style": {
+                  "fontSize": 24,
+                  "fontWeight": 700
+                },
+                "text": "注文確認",
+                "level": 1
+              },
+              {
+                "id": "51b2eacc-8ed7-4932-a75c-424f90448f8e",
+                "type": "review",
+                "style": {}
+              },
+              {
+                "id": "263b52f9-9d87-448f-86c4-3049414d881d",
+                "type": "button",
+                "style": {},
+                "text": "模擬注文を確定する",
+                "targetScreenId": "dd408b86-b443-4b3f-9b8c-31f754bf96de",
+                "action": "submit"
+              },
+              {
+                "id": "481bba70-6689-47ac-a5bb-a7e773aae884",
+                "type": "button",
+                "style": {},
+                "text": "カートに戻る",
+                "targetScreenId": "e9affcf7-9e11-49a2-84d0-36eae251d5e4"
+              }
+            ],
+            "description": "GitHub Pages 実環境テスト：注文確認。ダミーデータによる公開確認です。",
+            "seo": {
+              "title": "Pages検証 v1｜注文確認",
+              "ogImage": "https://placehold.co/1200x630/png?text=confirm"
+            }
+          },
+          {
+            "id": "dd408b86-b443-4b3f-9b8c-31f754bf96de",
+            "name": "注文完了",
+            "elements": [
+              {
+                "id": "76b84e1b-2399-4ae9-a068-026b166449a0",
+                "type": "heading",
+                "style": {
+                  "fontSize": 24,
+                  "fontWeight": 700
+                },
+                "text": "注文完了",
+                "level": 1
+              },
+              {
+                "id": "ffdec46f-3c0d-49d8-a092-92e3ad8248c2",
+                "type": "receipt",
+                "style": {}
+              },
+              {
+                "id": "a71d68d8-6870-45e5-99c8-3111392ed35d",
+                "type": "button",
+                "style": {},
+                "text": "新しい注文を始める",
+                "targetScreenId": "45c22070-73f5-4087-b031-b3e51685587b",
+                "action": "reset"
+              }
+            ],
+            "description": "GitHub Pages 実環境テスト：注文完了。ダミーデータによる公開確認です。",
+            "seo": {
+              "title": "Pages検証 v1｜注文完了",
+              "ogImage": "https://placehold.co/1200x630/png?text=complete"
+            }
+          }
+        ],
+        "exportOptions": {
+          "shadcn": true
+        },
+        "schemaVersion": 6,
+        "products": [],
+        "productFields": [],
+        "designSystem": {
+          "tokens": [
+            {
+              "id": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+              "codeName": "brand",
+              "name": "メイン",
+              "kind": "color",
+              "value": "#3546ba"
+            },
+            {
+              "id": "87e78ecd-7c79-4c72-8999-65f8a5f1f96c",
+              "codeName": "on-brand",
+              "name": "メインの上の文字",
+              "kind": "color",
+              "value": "#ffffff"
+            },
+            {
+              "id": "0188c498-cff5-4c13-8d82-59c049949bec",
+              "codeName": "surface",
+              "name": "面",
+              "kind": "color",
+              "value": "#f4f5fb"
+            },
+            {
+              "id": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68",
+              "codeName": "muted",
+              "name": "補足の文字",
+              "kind": "color",
+              "value": "#5b6170"
+            },
+            {
+              "id": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+              "codeName": "line",
+              "name": "線",
+              "kind": "color",
+              "value": "#dfe1ea"
+            },
+            {
+              "id": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+              "codeName": "card",
+              "name": "カードの角丸",
+              "kind": "radius",
+              "value": 12
+            },
+            {
+              "id": "6c992461-281b-452b-bd37-59c9277b59b6",
+              "codeName": "section",
+              "name": "セクションの余白",
+              "kind": "spacing",
+              "value": 56
+            },
+            {
+              "id": "b4beca67-657b-4bf6-a27d-fc207e6ba139",
+              "codeName": "space-l",
+              "name": "余白L",
+              "kind": "spacing",
+              "value": 24
+            },
+            {
+              "id": "b233360f-6345-40e5-90ea-829f807e7c19",
+              "codeName": "space-s",
+              "name": "余白S",
+              "kind": "spacing",
+              "value": 12
+            },
+            {
+              "id": "f1707823-613d-4ce9-bce9-1917a5b4b50b",
+              "codeName": "space-m",
+              "name": "余白M",
+              "kind": "spacing",
+              "value": 16
+            },
+            {
+              "id": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+              "codeName": "space-ml",
+              "name": "余白ML",
+              "kind": "spacing",
+              "value": 20
+            },
+            {
+              "id": "0cc5314d-9025-4a80-9dae-dfa30df04ae1",
+              "codeName": "header-glass",
+              "name": "ヘッダーの背景（半透明）",
+              "kind": "color",
+              "value": "#ffffffd9"
+            },
+            {
+              "id": "c081fc49-3ef5-4975-a60a-f36e710b6dc4",
+              "codeName": "text-1-25",
+              "name": "文字 1.25rem",
+              "kind": "fontSize",
+              "value": "1.25rem"
+            },
+            {
+              "id": "f803bdef-dd07-4141-9736-ffa046c767a5",
+              "codeName": "text-2-75",
+              "name": "文字 2.75rem",
+              "kind": "fontSize",
+              "value": "2.75rem"
+            },
+            {
+              "id": "d4064143-1d3e-4b49-ae6d-4a9a30c94031",
+              "codeName": "space-xs",
+              "name": "余白XS",
+              "kind": "spacing",
+              "value": 4
+            },
+            {
+              "id": "1fa7cb14-b4f1-49af-88a0-fccce5e39587",
+              "codeName": "text-2-5",
+              "name": "文字 2.5rem",
+              "kind": "fontSize",
+              "value": "2.5rem"
+            },
+            {
+              "id": "62ddd0f1-94d6-4337-86d2-5f48be944436",
+              "codeName": "text-1-125",
+              "name": "文字 1.125rem",
+              "kind": "fontSize",
+              "value": "1.125rem"
+            },
+            {
+              "id": "b804f3f0-fc3f-4932-9d34-c9883f18bf1c",
+              "codeName": "text-0-875",
+              "name": "文字 0.875rem",
+              "kind": "fontSize",
+              "value": "0.875rem"
+            },
+            {
+              "id": "d73690b4-7d0f-4dd8-9a89-31d6e534aacf",
+              "codeName": "text-2",
+              "name": "文字 2rem",
+              "kind": "fontSize",
+              "value": "2rem"
+            },
+            {
+              "id": "e217a90e-7fd7-4d18-9083-e1b474e339c8",
+              "codeName": "text",
+              "name": "文字",
+              "kind": "color",
+              "value": "#212631"
+            },
+            {
+              "id": "f5596fcc-d3bf-4106-a9e2-30c8297ecc07",
+              "codeName": "text-1-0625",
+              "name": "文字 1.0625rem",
+              "kind": "fontSize",
+              "value": "1.0625rem"
+            },
+            {
+              "id": "5406f674-9c14-4912-80fd-3faa0905a86b",
+              "codeName": "space-xl",
+              "name": "余白XL",
+              "kind": "spacing",
+              "value": 32
+            }
+          ],
+          "components": [
+            {
+              "id": "0fa818cb-5797-4139-a4da-d244786a3158",
+              "name": "共通ヘッダー",
+              "type": "container",
+              "root": {
+                "id": "474f9be5-002c-410e-96bc-4c7497d0bdbf",
+                "type": "container",
+                "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": 12,
+                  "paddingTop": 16,
+                  "paddingBottom": 16,
+                  "paddingLeft": 20,
+                  "paddingRight": 20,
+                  "position": "sticky",
+                  "top": 0,
+                  "zIndex": 10,
+                  "backgroundColor": "#ffffffd9",
+                  "backdropBlur": 12,
+                  "borderWidth": 0,
+                  "borderBottomWidth": 1,
+                  "borderStyle": "solid",
+                  "borderRadius": 0
+                },
+                "name": "ヘッダー",
+                "tokenRefs": {
+                  "borderColor": "c9de6e60-7209-4604-8f9b-aa74398158b7",
+                  "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                  "paddingTop": "f1707823-613d-4ce9-bce9-1917a5b4b50b",
+                  "paddingBottom": "f1707823-613d-4ce9-bce9-1917a5b4b50b",
+                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                  "backgroundColor": "0cc5314d-9025-4a80-9dae-dfa30df04ae1"
+                },
+                "children": [
+                  {
+                    "id": "59665b1a-8782-4e58-a8d0-9dcc36605568",
+                    "type": "container",
+                    "style": {
+                      "display": "flex",
+                      "flexDirection": "row",
+                      "gap": 12,
+                      "flexWrap": "wrap",
+                      "alignItems": "center",
+                      "width": "100%",
+                      "maxWidth": 1080,
+                      "marginLeft": "auto",
+                      "marginRight": "auto",
+                      "justifyContent": "space-between"
+                    },
+                    "name": "ロゴとナビ",
+                    "tokenRefs": {
+                      "gap": "b233360f-6345-40e5-90ea-829f807e7c19"
+                    },
+                    "children": [
+                      {
+                        "id": "32767610-234e-49f8-898b-470c8e55645a",
+                        "type": "heading",
+                        "style": {
+                          "margin": 0,
+                          "fontSize": "1.25rem"
+                        },
+                        "text": "サービス名",
+                        "level": 2,
+                        "tokenRefs": {
+                          "fontSize": "c081fc49-3ef5-4975-a60a-f36e710b6dc4"
+                        }
+                      },
+                      {
+                        "id": "75a88bbe-654c-4bef-9e79-7e2c08b4229a",
+                        "type": "container",
+                        "style": {
+                          "display": "flex",
+                          "flexDirection": "row",
+                          "gap": 20,
+                          "flexWrap": "wrap",
+                          "alignItems": "center"
+                        },
+                        "name": "ナビ",
+                        "tokenRefs": {
+                          "gap": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                        },
+                        "children": [
+                          {
+                            "id": "f26fb929-2226-4494-8cfa-04b3caa05fa8",
+                            "type": "text",
+                            "style": {
+                              "margin": 0
+                            },
+                            "text": "特徴"
+                          },
+                          {
+                            "id": "c23d0214-8a55-46be-91cb-046a9cbc0462",
+                            "type": "text",
+                            "style": {
+                              "margin": 0
+                            },
+                            "text": "料金"
+                          },
+                          {
+                            "id": "67483d98-b80a-42a9-b83c-2d714d92caa0",
+                            "type": "text",
+                            "style": {
+                              "margin": 0
+                            },
+                            "text": "よくある質問"
+                          },
+                          {
+                            "id": "f5ed6598-b5c3-4ee6-bee8-480aefd4f239",
+                            "type": "button",
+                            "style": {
+                              "paddingTop": 12,
+                              "paddingBottom": 12,
+                              "paddingLeft": 20,
+                              "paddingRight": 20,
+                              "borderWidth": 0,
+                              "borderStyle": "solid",
+                              "fontWeight": 700
+                            },
+                            "text": "はじめる",
+                            "tokenRefs": {
+                              "backgroundColor": "73480f9b-ef03-4b96-a4c4-1bd3f08f139b",
+                              "color": "87e78ecd-7c79-4c72-8999-65f8a5f1f96c",
+                              "borderRadius": "ddd64de1-a890-4198-8d71-0e1698c2219f",
+                              "paddingTop": "b233360f-6345-40e5-90ea-829f807e7c19",
+                              "paddingBottom": "b233360f-6345-40e5-90ea-829f807e7c19",
+                              "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                              "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                            },
+                            "animations": [
+                              {
+                                "id": "5282b308-dbf8-43a4-85dc-772d0d81e852",
+                                "delay": 0,
+                                "trigger": "press",
+                                "effect": {
+                                  "scale": 92
+                                },
+                                "spring": {
+                                  "stiffness": 420,
+                                  "damping": 11,
+                                  "mass": 1
+                                },
+                                "preset": "puni",
+                                "strength": 100,
+                                "speed": 100,
+                                "reducedFallback": "none"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "variants": [],
+              "templateId": "header"
+            },
+            {
+              "id": "a73b4ae1-da66-417a-9145-bf7e0fda1cfb",
+              "name": "アコーディオンの項目",
+              "type": "container",
+              "root": {
+                "id": "e0492d2b-45d4-4a7a-b57c-1f35fc3f5dda",
+                "type": "container",
+                "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": 0,
+                  "borderWidth": 0,
+                  "borderBottomWidth": 1,
+                  "borderStyle": "solid",
+                  "borderRadius": 0
+                },
+                "children": [
+                  {
+                    "id": "f62e7535-157b-487f-988c-922538d11981",
+                    "type": "button",
+                    "style": {
+                      "width": "100%",
+                      "textAlign": "left",
+                      "justifyContent": "space-between",
+                      "paddingTop": 16,
+                      "paddingBottom": 16,
+                      "paddingLeft": 0,
+                      "paddingRight": 0,
+                      "borderWidth": 0,
+                      "backgroundColor": "#ffffff00",
+                      "color": "#212631",
+                      "fontWeight": 700,
+                      "fontSize": "1.0625rem"
+                    },
+                    "text": "質問を書きます",
+                    "name": "質問",
+                    "attributes": {
+                      "aria-expanded": "false"
+                    },
+                    "interactions": [
+                      {
+                        "id": "6d7bcc4d-bd4f-43ce-8191-378fa0600e4b",
+                        "trigger": "click",
+                        "actions": [
+                          {
+                            "type": "toggleState",
+                            "stateId": "open"
+                          }
+                        ]
+                      }
+                    ],
+                    "tokenRefs": {
+                      "paddingTop": "f1707823-613d-4ce9-bce9-1917a5b4b50b",
+                      "paddingBottom": "f1707823-613d-4ce9-bce9-1917a5b4b50b",
+                      "color": "e217a90e-7fd7-4d18-9083-e1b474e339c8",
+                      "fontSize": "f5596fcc-d3bf-4106-a9e2-30c8297ecc07"
+                    }
+                  },
+                  {
+                    "id": "b904df44-0375-4c89-b95f-96b214cc72b7",
+                    "type": "text",
+                    "style": {
+                      "margin": 0,
+                      "paddingBottom": 16
+                    },
+                    "text": "答えを書きます。",
+                    "name": "答え",
+                    "tokenRefs": {
+                      "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68",
+                      "paddingBottom": "f1707823-613d-4ce9-bce9-1917a5b4b50b"
+                    },
+                    "stateBinding": {
+                      "visible": {
+                        "stateId": "open",
+                        "operator": "eq",
+                        "value": true
+                      }
+                    }
+                  }
+                ],
+                "name": "アコーディオンの項目",
+                "tokenRefs": {
+                  "borderColor": "c9de6e60-7209-4604-8f9b-aa74398158b7"
+                }
+              },
+              "variants": [],
+              "variables": [
+                {
+                  "id": "open",
+                  "name": "開いている",
+                  "type": "boolean",
+                  "initial": false
+                }
+              ],
+              "templateId": "accordion-item",
+              "description": "質問と答え（FAQ）。項目ごとに開け閉めする"
+            },
+            {
+              "id": "dd61f41d-3d79-426d-be82-4e209705c08b",
+              "name": "共通フッター",
+              "type": "container",
+              "root": {
+                "id": "cc428c9c-25a7-4ad8-9678-e060fee9988a",
+                "type": "container",
+                "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "gap": 12,
+                  "paddingTop": 32,
+                  "paddingBottom": 32,
+                  "paddingLeft": 20,
+                  "paddingRight": 20,
+                  "borderRadius": 0
+                },
+                "name": "フッター",
+                "tokenRefs": {
+                  "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68",
+                  "gap": "b233360f-6345-40e5-90ea-829f807e7c19",
+                  "paddingTop": "5406f674-9c14-4912-80fd-3faa0905a86b",
+                  "paddingBottom": "5406f674-9c14-4912-80fd-3faa0905a86b",
+                  "paddingLeft": "c2aab45b-6374-4f64-9f61-e38534b868c4",
+                  "paddingRight": "c2aab45b-6374-4f64-9f61-e38534b868c4"
+                },
+                "children": [
+                  {
+                    "id": "d6c72088-23fb-4c8a-912b-c2c1b4c77c2c",
+                    "type": "container",
+                    "style": {
+                      "display": "flex",
+                      "flexDirection": "row",
+                      "gap": 12,
+                      "flexWrap": "wrap",
+                      "alignItems": "center",
+                      "width": "100%",
+                      "maxWidth": 1080,
+                      "marginLeft": "auto",
+                      "marginRight": "auto",
+                      "justifyContent": "space-between"
+                    },
+                    "name": "コピーライトとリンク",
+                    "tokenRefs": {
+                      "gap": "b233360f-6345-40e5-90ea-829f807e7c19"
+                    },
+                    "children": [
+                      {
+                        "id": "778888ee-f63c-4b72-bd27-42e3bd640bbf",
+                        "type": "text",
+                        "style": {
+                          "margin": 0,
+                          "fontSize": "0.875rem"
+                        },
+                        "text": "© サービス名",
+                        "tokenRefs": {
+                          "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68",
+                          "fontSize": "b804f3f0-fc3f-4932-9d34-c9883f18bf1c"
+                        }
+                      },
+                      {
+                        "id": "ca961462-9e86-4f09-bd8f-266dd0b4e752",
+                        "type": "container",
+                        "style": {
+                          "display": "flex",
+                          "flexDirection": "row",
+                          "gap": 16,
+                          "flexWrap": "wrap",
+                          "alignItems": "center"
+                        },
+                        "name": "リンクの並び",
+                        "tokenRefs": {
+                          "gap": "f1707823-613d-4ce9-bce9-1917a5b4b50b"
+                        },
+                        "children": [
+                          {
+                            "id": "ff7b6c89-ba18-4582-8719-5522e242e874",
+                            "type": "text",
+                            "style": {
+                              "margin": 0,
+                              "fontSize": "0.875rem"
+                            },
+                            "text": "利用規約",
+                            "tokenRefs": {
+                              "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68",
+                              "fontSize": "b804f3f0-fc3f-4932-9d34-c9883f18bf1c"
+                            }
+                          },
+                          {
+                            "id": "a3bec291-691c-400d-8cf9-22baa02cc259",
+                            "type": "text",
+                            "style": {
+                              "margin": 0,
+                              "fontSize": "0.875rem"
+                            },
+                            "text": "プライバシー",
+                            "tokenRefs": {
+                              "color": "ab2cbfe6-8209-4142-a1ba-6c6f8dffad68",
+                              "fontSize": "b804f3f0-fc3f-4932-9d34-c9883f18bf1c"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "variants": [],
+              "templateId": "footer"
+            }
+          ]
+        },
+        "breakpoints": [],
+        "datasets": [
+          {
+            "id": "products",
+            "name": "商品",
+            "role": "products",
+            "fields": [
+              {
+                "id": "name",
+                "label": "商品名",
+                "type": "text",
+                "required": true,
+                "codeName": "name"
+              },
+              {
+                "id": "price",
+                "label": "価格",
+                "type": "number",
+                "required": true,
+                "min": 0,
+                "codeName": "price"
+              },
+              {
+                "id": "image",
+                "label": "画像",
+                "type": "image",
+                "codeName": "image"
+              }
+            ],
+            "records": [
+              {
+                "id": "d7cdeb80-28e1-4763-b847-5985f4e526ef",
+                "values": {
+                  "name": "ブレンドコーヒー",
+                  "price": 480
+                }
+              },
+              {
+                "id": "501c9e0d-c0b9-4ad5-b632-9d6dd4c2d70d",
+                "values": {
+                  "name": "カフェラテ",
+                  "price": 560
+                }
+              },
+              {
+                "id": "2a1c0465-3907-4682-ac47-79a09d351d96",
+                "values": {
+                  "name": "チーズケーキ",
+                  "price": 520
+                }
+              }
+            ]
+          }
+        ],
+        "exportedContract": {
+          "datasets": [
+            {
+              "id": "products",
+              "key": "data1",
+              "typeName": "Data1",
+              "name": "商品",
+              "fields": [
+                {
+                  "id": "name",
+                  "key": "name",
+                  "label": "商品名",
+                  "type": "text",
+                  "required": true,
+                  "nullable": false,
+                  "absent": false
+                },
+                {
+                  "id": "price",
+                  "key": "price",
+                  "label": "価格",
+                  "type": "number",
+                  "required": true,
+                  "nullable": false,
+                  "absent": false,
+                  "min": 0
+                },
+                {
+                  "id": "image",
+                  "key": "image",
+                  "label": "画像",
+                  "type": "image",
+                  "required": false,
+                  "nullable": true,
+                  "absent": true
+                }
+              ]
+            }
+          ]
+        },
+        "seo": {
+          "url": "https://mochissant.github.io/react-maker-pages-check/"
+        }
+      }
+    },
+    {
       "id": "57d890be-4c49-4abe-a704-d452ce5a591c",
       "name": "自動の版 2026/11/27 10:34",
       "createdAt": "2026-11-27T01:34:49.676Z",

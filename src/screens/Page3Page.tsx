@@ -4,7 +4,7 @@
 import type { ScreenParts } from './types';
 
 /** 画面の内容の署名。書き出したあとに project.json を直接書き換えると合わなくなり、そのあいだは共通の描画で表示する */
-export const signature = "1tzkhqi";
+export const signature = "14tnvzb";
 
 export default function Page3Page({ element }: ScreenParts) {
   return (

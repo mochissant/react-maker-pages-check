@@ -3,11 +3,11 @@
     "path": "/",
     "file": "index.html",
     "screenId": "90ca1973-e446-4a92-88c4-f5edcf8a5178",
-    "title": "Pages検証 v1｜LP",
+    "title": "Pages検証 v2｜LP",
     "lang": "ja",
     "canonical": "https://mochissant.github.io/react-maker-pages-check/",
     "noindex": false,
-    "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：LP。ダミーデータによる公開確認です。\" />\n    <link rel=\"canonical\" href=\"https://mochissant.github.io/react-maker-pages-check/\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v1｜LP\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：LP。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:url\" content=\"https://mochissant.github.io/react-maker-pages-check/\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=home\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
+    "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：LP。ダミーデータによる公開確認です。\" />\n    <link rel=\"canonical\" href=\"https://mochissant.github.io/react-maker-pages-check/\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v2｜LP\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：LP。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:url\" content=\"https://mochissant.github.io/react-maker-pages-check/\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=home\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
   },
   {
     "path": "/page-1",
@@ -38,15 +38,5 @@
     "canonical": "https://mochissant.github.io/react-maker-pages-check/page-3",
     "noindex": false,
     "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：注文確認。ダミーデータによる公開確認です。\" />\n    <link rel=\"canonical\" href=\"https://mochissant.github.io/react-maker-pages-check/page-3\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v1｜注文確認\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：注文確認。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:url\" content=\"https://mochissant.github.io/react-maker-pages-check/page-3\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=confirm\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
-  },
-  {
-    "path": "/page-4",
-    "file": "page-4/index.html",
-    "screenId": "dd408b86-b443-4b3f-9b8c-31f754bf96de",
-    "title": "Pages検証 v1｜注文完了",
-    "lang": "ja",
-    "canonical": "https://mochissant.github.io/react-maker-pages-check/page-4",
-    "noindex": false,
-    "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：注文完了。ダミーデータによる公開確認です。\" />\n    <link rel=\"canonical\" href=\"https://mochissant.github.io/react-maker-pages-check/page-4\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v1｜注文完了\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：注文完了。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:url\" content=\"https://mochissant.github.io/react-maker-pages-check/page-4\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=complete\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
   }
 ]
