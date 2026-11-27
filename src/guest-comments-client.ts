@@ -15,8 +15,8 @@ const urlPattern = /^(https:\/\/[^\s"'<>\\]+|http:\/\/(localhost|127\.0\.0\.1)(:
 /** 閲覧用のURLの id（BASE_URL の …/preview/<id>/） */
 export const previewIdFrom = (base: string) => /\/preview\/([A-Za-z0-9_-]{8,64})\/$/.exec(base)?.[1] ?? null;
 
-function storedAuth(base: string): Promise<CryptoKey | null> {
-  return new Promise((resolve) => {
+async function storedAuth(base: string): Promise<CryptoKey | null> {
+  const value = await new Promise<{ key?: unknown; auth?: unknown; authWrapped?: unknown; expires?: unknown } | null>((resolve) => {
     if (typeof indexedDB === 'undefined') { resolve(null); return; }
     const request = indexedDB.open('rm-lock', 1);
     request.onupgradeneeded = () => request.result.createObjectStore('keys');
@@ -26,13 +26,23 @@ function storedAuth(base: string): Promise<CryptoKey | null> {
         const get = request.result.transaction('keys').objectStore('keys').get(base);
         get.onsuccess = () => {
           const record: unknown = get.result;
-          const value = record && typeof record === 'object' ? record as { auth?: unknown; expires?: unknown } : null;
-          resolve(value && value.auth instanceof CryptoKey && typeof value.expires === 'number' && value.expires > Date.now() ? value.auth : null);
+          resolve(record && typeof record === 'object' ? record : null);
         };
         get.onerror = () => resolve(null);
       } catch { resolve(null); }
     };
   });
+  if (!value || typeof value.expires !== 'number' || value.expires <= Date.now()) return null;
+  // 以前に開いた Chrome・Firefox の記録も引き続き使える。
+  if (value.auth instanceof CryptoKey) return value.auth;
+  if (!(value.key instanceof CryptoKey) || !value.authWrapped || typeof value.authWrapped !== 'object') return null;
+  const wrapped = value.authWrapped as { iv?: unknown; data?: unknown };
+  if (!(wrapped.iv instanceof Uint8Array) || !(wrapped.data instanceof ArrayBuffer)) return null;
+  try {
+    const bytes = new Uint8Array(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: new Uint8Array(wrapped.iv), additionalData: new TextEncoder().encode('react-maker-preview-auth-v1') }, value.key, wrapped.data));
+    try { return await crypto.subtle.importKey('pkcs8', bytes, { name: 'X25519' }, false, ['deriveBits']); }
+    finally { bytes.fill(0); }
+  } catch { return null; }
 }
 
 /** コメントを受け付けている閲覧用のURLで、鍵を開けていれば、送り先と鍵を返す。使えなければ null（GitHub の Issue で送る） */
@@ -40,13 +50,15 @@ export async function guestAccess(base: string, repository: string): Promise<Gue
   const preview = previewIdFrom(base);
   if (!preview || !globalThis.crypto?.subtle) return null;
   try {
+    // 鍵を開けていなければ（パスワードの無い閲覧用のURLを含む）、鍵のファイルを読みに行かない（無いファイルの 404 がコンソールに出ていた。#219）
+    const auth = await storedAuth(base);
+    if (!auth) return null;
     const response = await fetch(`${base}__rm-lock/lock.json`, { cache: 'no-store' });
     if (!response.ok) return null;
     const sealed: unknown = await response.json();
     const url = sealed && typeof sealed === 'object' ? (sealed as { comments?: unknown }).comments : undefined;
     if (typeof url !== 'string' || !urlPattern.test(url)) return null;
-    const auth = await storedAuth(base);
-    return auth ? { url, repository, preview, auth } : null;
+    return { url, repository, preview, auth };
   } catch { return null; }
 }
 

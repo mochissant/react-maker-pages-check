@@ -14,7 +14,6 @@
       "public/robots.txt",
       "public/sitemap.xml",
       "react-maker/agents/ui-review.md",
-      "react-maker/history.json",
       "react-maker/manifest.json",
       "react-maker/project.schema.json",
       "scripts/cloudflare-pages.mjs",

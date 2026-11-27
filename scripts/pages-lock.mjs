@@ -25,7 +25,7 @@ export function fromBase64(text) {
 }
 
 /** パスワードと塩から、X25519 の秘密鍵（と公開鍵）を作る */
-export async function passwordKeyPair(password, salt, iterations) {
+export async function passwordKeyPair(password, salt, iterations, extractable = false) {
   const subtle = globalThis.crypto.subtle;
   const material = await subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveBits']);
   const seed = new Uint8Array(await subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt, iterations }, material, 256));
@@ -34,7 +34,7 @@ export async function passwordKeyPair(password, salt, iterations) {
   const privateKey = await subtle.importKey('pkcs8', pkcs8, { name: 'X25519' }, true, ['deriveBits']);
   const jwk = await subtle.exportKey('jwk', privateKey);
   const publicKey = Uint8Array.from(atob(jwk.x.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - (jwk.x.length % 4)) % 4)), (character) => character.charCodeAt(0));
-  return { privateKey: await subtle.importKey('pkcs8', pkcs8, { name: 'X25519' }, false, ['deriveBits']), publicKey };
+  return { privateKey: await subtle.importKey('pkcs8', pkcs8, { name: 'X25519' }, extractable, ['deriveBits']), publicKey };
 }
 
 /** 発行する人：パスワードから、ワークフローに渡す鍵の情報（公開鍵と塩。秘密ではない）を作る */
@@ -69,13 +69,22 @@ export async function sealContentKey(lock) {
 export async function unlockWithAuth(password, sealed) {
   const subtle = globalThis.crypto.subtle;
   const decode = (text) => Uint8Array.from(atob(text), (character) => character.charCodeAt(0));
-  const { privateKey } = await passwordKeyPair(password, decode(sealed.salt), sealed.iterations);
+  const { privateKey } = await passwordKeyPair(password, decode(sealed.salt), sealed.iterations, true);
   const ephemeral = await subtle.importKey('raw', decode(sealed.ephemeral), { name: 'X25519' }, false, []);
   const shared = await subtle.deriveBits({ name: 'X25519', public: ephemeral }, privateKey, 256);
   const wrapping = await subtle.importKey('raw', shared, 'AES-GCM', false, ['decrypt']);
   const raw = await subtle.decrypt({ name: 'AES-GCM', iv: decode(sealed.iv) }, wrapping, decode(sealed.wrapped));
-  // ページの中では、取り出せない鍵として覚える（IndexedDB に置ける）
-  return { key: await subtle.importKey('raw', raw, 'AES-GCM', false, ['decrypt']), auth: privateKey };
+  const key = await subtle.importKey('raw', raw, 'AES-GCM', false, ['encrypt', 'decrypt']);
+  new Uint8Array(raw).fill(0);
+  // Safari は X25519 CryptoKey を IndexedDB に入れると行全体を読めなくなる。
+  // コメント用の秘密鍵は、中身の鍵で暗号化したバイト列として覚える。平文では保存しない。
+  const authBytes = new Uint8Array(await subtle.exportKey('pkcs8', privateKey));
+  try {
+    const auth = await subtle.importKey('pkcs8', authBytes, { name: 'X25519' }, false, ['deriveBits']);
+    const iv = globalThis.crypto.getRandomValues(new Uint8Array(12));
+    const data = await subtle.encrypt({ name: 'AES-GCM', iv, additionalData: new TextEncoder().encode('react-maker-preview-auth-v1') }, key, authBytes);
+    return { key, auth, authWrapped: { iv, data } };
+  } finally { authBytes.fill(0); }
 }
 
 export async function unlockContentKey(password, sealed) {

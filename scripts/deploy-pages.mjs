@@ -140,17 +140,27 @@ export function lockPage(base) {
 ${[passwordKeyPair, unlockWithAuth].map(String).join('\n')}
 const base = ${JSON.stringify(base)};
 const message = document.getElementById('rm-message');
-function store({ key, auth }) {
+function store({ key, authWrapped }) {
   return new Promise((resolve, reject) => {
     const request = indexedDB.open('rm-lock', 1);
     request.onupgradeneeded = () => request.result.createObjectStore('keys');
     request.onerror = () => reject(request.error);
     request.onsuccess = () => {
-      const transaction = request.result.transaction('keys', 'readwrite');
-      // auth：パスワードの秘密鍵。コメントを書くときの証明に使う（Issue #275）
-      transaction.objectStore('keys').put({ key, auth, expires: Date.now() + 7 * 24 * 60 * 60 * 1000 }, base);
-      transaction.oncomplete = () => resolve();
-      transaction.onerror = () => reject(transaction.error);
+      const db = request.result;
+      const transaction = db.transaction('keys', 'readwrite');
+      transaction.objectStore('keys').put({ key, authWrapped, expires: Date.now() + 7 * 24 * 60 * 60 * 1000 }, base);
+      transaction.oncomplete = () => {
+        // 保存に成功したように見えても読み戻せない場合は、再読み込みのループにしない。
+        const get = db.transaction('keys').objectStore('keys').get(base);
+        get.onsuccess = () => {
+          db.close();
+          if (get.result?.key && get.result?.authWrapped) resolve();
+          else reject(Object.assign(new Error('storage'), { name: 'DataCloneError' }));
+        };
+        get.onerror = () => { db.close(); reject(get.error); };
+      };
+      transaction.onerror = () => { db.close(); reject(transaction.error); };
+      transaction.onabort = () => { db.close(); reject(transaction.error); };
     };
   });
 }
@@ -167,7 +177,10 @@ document.getElementById('rm-lock').addEventListener('submit', async (event) => {
     await navigator.serviceWorker.ready;
     location.reload();
   } catch (error) {
-    message.textContent = error.name === 'NotSupportedError' ? 'このブラウザでは開けません。最新の Chrome・Edge・Firefox・Safari で開いてください。' : 'パスワードが違います。';
+    message.textContent = error.name === 'NotSupportedError' ? 'このブラウザでは開けません。最新の Chrome・Edge・Firefox・Safari で開いてください。'
+      : error.name === 'DataCloneError' ? 'このブラウザで鍵を保存できませんでした。別のブラウザで開いてください。'
+      : error.name === 'OperationError' ? 'パスワードが違います。'
+      : 'ページを開く準備ができませんでした。もう一度「開く」を押してください。';
     button.disabled = false;
   }
 });
