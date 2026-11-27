@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>パスワードを入れてください</title>
+    <style>
+      :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+      body { margin: 0; min-height: 100dvh; display: grid; place-items: center; padding: 1rem; background: Canvas; color: CanvasText; }
+      form { display: grid; gap: 0.75rem; width: min(100%, 22rem); }
+      h1 { font-size: 1.25rem; margin: 0; }
+      p { margin: 0; font-size: 0.875rem; line-height: 1.6; }
+      input, button { font: inherit; padding: 0.625rem 0.75rem; border-radius: 0.5rem; border: 1px solid GrayText; }
+      button { background: CanvasText; color: Canvas; cursor: pointer; }
+      [role="alert"]:empty { display: none; }
+    </style>
+  </head>
+  <body>
+    <form id="rm-lock">
+      <h1>この閲覧用のページには、パスワードがかかっています</h1>
+      <p>共有した人から聞いたパスワードを入れてください。このブラウザでは、7日間は聞きません。</p>
+      <label for="rm-password">パスワード</label>
+      <input id="rm-password" type="password" autocomplete="current-password" required autofocus>
+      <button type="submit">開く</button>
+      <p role="alert" id="rm-message"></p>
+    </form>
+    <script type="module">
+async function passwordKeyPair(password, salt, iterations, extractable = false) {
+  const subtle = globalThis.crypto.subtle;
+  const material = await subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveBits']);
+  const seed = new Uint8Array(await subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt, iterations }, material, 256));
+  // X25519 の秘密鍵の PKCS#8（RFC 8410）。先頭の16バイトは決まった形
+  const pkcs8 = new Uint8Array([0x30, 0x2e, 0x02, 0x01, 0x00, 0x30, 0x05, 0x06, 0x03, 0x2b, 0x65, 0x6e, 0x04, 0x22, 0x04, 0x20, ...seed]);
+  const privateKey = await subtle.importKey('pkcs8', pkcs8, { name: 'X25519' }, true, ['deriveBits']);
+  const jwk = await subtle.exportKey('jwk', privateKey);
+  const publicKey = Uint8Array.from(atob(jwk.x.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - (jwk.x.length % 4)) % 4)), (character) => character.charCodeAt(0));
+  return { privateKey: await subtle.importKey('pkcs8', pkcs8, { name: 'X25519' }, extractable, ['deriveBits']), publicKey };
+}
+async function unlockWithAuth(password, sealed) {
+  const subtle = globalThis.crypto.subtle;
+  const decode = (text) => Uint8Array.from(atob(text), (character) => character.charCodeAt(0));
+  const { privateKey } = await passwordKeyPair(password, decode(sealed.salt), sealed.iterations, true);
+  const ephemeral = await subtle.importKey('raw', decode(sealed.ephemeral), { name: 'X25519' }, false, []);
+  const shared = await subtle.deriveBits({ name: 'X25519', public: ephemeral }, privateKey, 256);
+  const wrapping = await subtle.importKey('raw', shared, 'AES-GCM', false, ['decrypt']);
+  const raw = await subtle.decrypt({ name: 'AES-GCM', iv: decode(sealed.iv) }, wrapping, decode(sealed.wrapped));
+  const key = await subtle.importKey('raw', raw, 'AES-GCM', false, ['encrypt', 'decrypt']);
+  new Uint8Array(raw).fill(0);
+  // Safari は X25519 CryptoKey を IndexedDB に入れると行全体を読めなくなる。
+  // コメント用の秘密鍵は、中身の鍵で暗号化したバイト列として覚える。平文では保存しない。
+  const authBytes = new Uint8Array(await subtle.exportKey('pkcs8', privateKey));
+  try {
+    const auth = await subtle.importKey('pkcs8', authBytes, { name: 'X25519' }, false, ['deriveBits']);
+    const iv = globalThis.crypto.getRandomValues(new Uint8Array(12));
+    const data = await subtle.encrypt({ name: 'AES-GCM', iv, additionalData: new TextEncoder().encode('react-maker-preview-auth-v1') }, key, authBytes);
+    return { key, auth, authWrapped: { iv, data } };
+  } finally { authBytes.fill(0); }
+}
+const base = "/react-maker-pages-check/preview/46a7f24ceff102699361a04accb24053/";
+const message = document.getElementById('rm-message');
+function store({ key, authWrapped }) {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open('rm-lock', 1);
+    request.onupgradeneeded = () => request.result.createObjectStore('keys');
+    request.onerror = () => reject(request.error);
+    request.onsuccess = () => {
+      const db = request.result;
+      const transaction = db.transaction('keys', 'readwrite');
+      transaction.objectStore('keys').put({ key, authWrapped, expires: Date.now() + 7 * 24 * 60 * 60 * 1000 }, base);
+      transaction.oncomplete = () => {
+        // 保存に成功したように見えても読み戻せない場合は、再読み込みのループにしない。
+        const get = db.transaction('keys').objectStore('keys').get(base);
+        get.onsuccess = () => {
+          db.close();
+          if (get.result?.key && get.result?.authWrapped) resolve();
+          else reject(Object.assign(new Error('storage'), { name: 'DataCloneError' }));
+        };
+        get.onerror = () => { db.close(); reject(get.error); };
+      };
+      transaction.onerror = () => { db.close(); reject(transaction.error); };
+      transaction.onabort = () => { db.close(); reject(transaction.error); };
+    };
+  });
+}
+document.getElementById('rm-lock').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const button = event.currentTarget.querySelector('button');
+  button.disabled = true;
+  message.textContent = '確かめています…';
+  try {
+    if (!globalThis.crypto?.subtle || !('serviceWorker' in navigator) || !globalThis.indexedDB) throw Object.assign(new Error('unsupported'), { name: 'NotSupportedError' });
+    const sealed = await (await fetch(base + '__rm-lock/lock.json', { cache: 'no-store' })).json();
+    await store(await unlockWithAuth(document.getElementById('rm-password').value, sealed));
+    await navigator.serviceWorker.register(base + 'rm-lock-sw.js', { scope: base });
+    await navigator.serviceWorker.ready;
+    location.reload();
+  } catch (error) {
+    message.textContent = error.name === 'NotSupportedError' ? 'このブラウザでは開けません。最新の Chrome・Edge・Firefox・Safari で開いてください。'
+      : error.name === 'DataCloneError' ? 'このブラウザで鍵を保存できませんでした。別のブラウザで開いてください。'
+      : error.name === 'OperationError' ? 'パスワードが違います。'
+      : 'ページを開く準備ができませんでした。もう一度「開く」を押してください。';
+    button.disabled = false;
+  }
+});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "id": "46a7f24ceff102699361a04accb24053",
+  "branch": "codex/safari-preview-unlock",
+  "sha": "229b75a68c60c3c189d40e88f5ac7af7e9bdd1ab",
+  "createdAt": "2026-11-27T07:10:02.773Z",
+  "updatedAt": "2026-11-27T07:10:02.773Z",
+  "locked": true,
+  "lock": {
+    "v": 1,
+    "salt": "9gdW4Nzw314J2nObFpoFdQ==",
+    "iterations": 600000,
+    "publicKey": "0eUo323CGpXp8mo8HnJwEGeKjWBuyyj5MIlce8T4jF0=",
+    "comments": "https://react-maker.vercel.app/api/guest-comments"
+  }
+}
