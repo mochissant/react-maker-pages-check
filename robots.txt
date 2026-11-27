@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://mochissant.github.io/react-maker-pages-check/sitemap.xml
+
 User-agent: *
 Disallow: /react-maker-pages-check/preview/
