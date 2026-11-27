@@ -1,6 +1,6 @@
 {
   "id": "2b9dee02-3631-4d50-ba44-9f124e8add61",
-  "revision": 5,
+  "revision": 7,
   "startScreenId": "90ca1973-e446-4a92-88c4-f5edcf8a5178",
   "screens": [
     {
@@ -2337,7 +2337,7 @@
       ]
     }
   ],
-  "updatedAt": "2026-11-27T01:53:23.602Z",
+  "updatedAt": "2026-11-27T01:55:29.861Z",
   "exportedContract": {
     "datasets": [
       {
@@ -2377,6 +2377,9 @@
         ]
       }
     ]
+  },
+  "seo": {
+    "url": "https://mochissant.github.io/react-maker-pages-check/"
   },
   "fonts": [],
   "assets": [],

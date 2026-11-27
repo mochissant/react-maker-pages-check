@@ -2,7 +2,7 @@
   "tool": "react-maker",
   "version": "0.1.0",
   "projectId": "2b9dee02-3631-4d50-ba44-9f124e8add61",
-  "revision": 5,
+  "revision": 7,
   "regenerate": {
     "screens": "編集GUIで開いて保存する（GitHub連携・手元のファイルとの同期）か、「画面データZIP」の src/generated/ を上書きする。src/generated/ 以外は変わらない",
     "runtime": "新しい「Reactソースを書き出す」のZIPから、files.tool のファイルだけを上書きする。files.user・files.both は残す"
@@ -12,6 +12,7 @@
       ".claude/skills/react-maker/SKILL.md",
       "AGENTS.md",
       "public/robots.txt",
+      "public/sitemap.xml",
       "react-maker/agents/ui-review.md",
       "react-maker/history.json",
       "react-maker/manifest.json",

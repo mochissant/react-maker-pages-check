@@ -1,6 +1,6 @@
 # データの引き継ぎ資料
 
-react-maker が書き出しました（保存版 5）。型は `src/generated/data-types.ts`、API仕様は `src/generated/openapi.json`、モックのサーバーは `npm run mock:api` です。
+react-maker が書き出しました（保存版 7）。型は `src/generated/data-types.ts`、API仕様は `src/generated/openapi.json`、モックのサーバーは `npm run mock:api` です。
 
 本番のAPIに切り替えるには、`.env.local` に `VITE_DATA_API_URL=https://…` を書きます（空ならブラウザ内のモック）。
 

@@ -5,9 +5,9 @@
     "screenId": "90ca1973-e446-4a92-88c4-f5edcf8a5178",
     "title": "Pages検証 v1｜LP",
     "lang": "ja",
-    "canonical": "",
+    "canonical": "https://mochissant.github.io/react-maker-pages-check/",
     "noindex": false,
-    "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：LP。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v1｜LP\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：LP。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=home\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
+    "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：LP。ダミーデータによる公開確認です。\" />\n    <link rel=\"canonical\" href=\"https://mochissant.github.io/react-maker-pages-check/\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v1｜LP\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：LP。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:url\" content=\"https://mochissant.github.io/react-maker-pages-check/\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=home\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
   },
   {
     "path": "/page-1",
@@ -15,9 +15,9 @@
     "screenId": "45c22070-73f5-4087-b031-b3e51685587b",
     "title": "Pages検証 v1｜商品一覧",
     "lang": "ja",
-    "canonical": "",
+    "canonical": "https://mochissant.github.io/react-maker-pages-check/page-1",
     "noindex": false,
-    "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：商品一覧。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v1｜商品一覧\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：商品一覧。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=catalog\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
+    "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：商品一覧。ダミーデータによる公開確認です。\" />\n    <link rel=\"canonical\" href=\"https://mochissant.github.io/react-maker-pages-check/page-1\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v1｜商品一覧\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：商品一覧。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:url\" content=\"https://mochissant.github.io/react-maker-pages-check/page-1\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=catalog\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
   },
   {
     "path": "/page-2",
@@ -25,9 +25,9 @@
     "screenId": "e9affcf7-9e11-49a2-84d0-36eae251d5e4",
     "title": "Pages検証 v1｜カート",
     "lang": "ja",
-    "canonical": "",
+    "canonical": "https://mochissant.github.io/react-maker-pages-check/page-2",
     "noindex": false,
-    "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：カート。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v1｜カート\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：カート。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=cart\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
+    "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：カート。ダミーデータによる公開確認です。\" />\n    <link rel=\"canonical\" href=\"https://mochissant.github.io/react-maker-pages-check/page-2\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v1｜カート\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：カート。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:url\" content=\"https://mochissant.github.io/react-maker-pages-check/page-2\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=cart\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
   },
   {
     "path": "/page-3",
@@ -35,9 +35,9 @@
     "screenId": "275de1c5-ef0f-46b9-9632-ef6599c68cda",
     "title": "Pages検証 v1｜注文確認",
     "lang": "ja",
-    "canonical": "",
+    "canonical": "https://mochissant.github.io/react-maker-pages-check/page-3",
     "noindex": false,
-    "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：注文確認。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v1｜注文確認\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：注文確認。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=confirm\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
+    "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：注文確認。ダミーデータによる公開確認です。\" />\n    <link rel=\"canonical\" href=\"https://mochissant.github.io/react-maker-pages-check/page-3\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v1｜注文確認\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：注文確認。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:url\" content=\"https://mochissant.github.io/react-maker-pages-check/page-3\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=confirm\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
   },
   {
     "path": "/page-4",
@@ -45,8 +45,8 @@
     "screenId": "dd408b86-b443-4b3f-9b8c-31f754bf96de",
     "title": "Pages検証 v1｜注文完了",
     "lang": "ja",
-    "canonical": "",
+    "canonical": "https://mochissant.github.io/react-maker-pages-check/page-4",
     "noindex": false,
-    "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：注文完了。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v1｜注文完了\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：注文完了。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=complete\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
+    "head": "    <meta name=\"theme-color\" content=\"#ffffff\" />\n    <meta name=\"description\" content=\"GitHub Pages 実環境テスト：注文完了。ダミーデータによる公開確認です。\" />\n    <link rel=\"canonical\" href=\"https://mochissant.github.io/react-maker-pages-check/page-4\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:site_name\" content=\"サイト\" />\n    <meta property=\"og:title\" content=\"Pages検証 v1｜注文完了\" />\n    <meta property=\"og:description\" content=\"GitHub Pages 実環境テスト：注文完了。ダミーデータによる公開確認です。\" />\n    <meta property=\"og:url\" content=\"https://mochissant.github.io/react-maker-pages-check/page-4\" />\n    <meta property=\"og:image\" content=\"https://placehold.co/1200x630/png?text=complete\" />\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />"
   }
 ]

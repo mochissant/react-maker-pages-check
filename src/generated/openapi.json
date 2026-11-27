@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "react-maker のサイト のデータAPI",
-    "version": "5"
+    "version": "7"
   },
   "paths": {
     "/datasets/data1": {
