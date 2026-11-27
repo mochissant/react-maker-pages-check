@@ -15,8 +15,10 @@ const urlPattern = /^(https:\/\/[^\s"'<>\\]+|http:\/\/(localhost|127\.0\.0\.1)(:
 /** 閲覧用のURLの id（BASE_URL の …/preview/<id>/） */
 export const previewIdFrom = (base: string) => /\/preview\/([A-Za-z0-9_-]{8,64})\/$/.exec(base)?.[1] ?? null;
 
-async function storedAuth(base: string): Promise<CryptoKey | null> {
-  const value = await new Promise<{ key?: unknown; auth?: unknown; authWrapped?: unknown; expires?: unknown } | null>((resolve) => {
+type StoredLock = { auth?: unknown; vault?: unknown; authIv?: unknown; authData?: unknown; expires?: unknown };
+
+function storedRecord(base: string): Promise<StoredLock | null> {
+  return new Promise((resolve) => {
     if (typeof indexedDB === 'undefined') { resolve(null); return; }
     const request = indexedDB.open('rm-lock', 1);
     request.onupgradeneeded = () => request.result.createObjectStore('keys');
@@ -26,22 +28,29 @@ async function storedAuth(base: string): Promise<CryptoKey | null> {
         const get = request.result.transaction('keys').objectStore('keys').get(base);
         get.onsuccess = () => {
           const record: unknown = get.result;
-          resolve(record && typeof record === 'object' ? record : null);
+          const value = record && typeof record === 'object' ? record as StoredLock : null;
+          resolve(value && typeof value.expires === 'number' && value.expires > Date.now() ? value : null);
         };
         get.onerror = () => resolve(null);
       } catch { resolve(null); }
     };
   });
-  if (!value || typeof value.expires !== 'number' || value.expires <= Date.now()) return null;
-  // 以前に開いた Chrome・Firefox の記録も引き続き使える。
-  if (value.auth instanceof CryptoKey) return value.auth;
-  if (!(value.key instanceof CryptoKey) || !value.authWrapped || typeof value.authWrapped !== 'object') return null;
-  const wrapped = value.authWrapped as { iv?: unknown; data?: unknown };
-  if (!(wrapped.iv instanceof Uint8Array) || !(wrapped.data instanceof ArrayBuffer)) return null;
+}
+
+/**
+ * 鍵を開けたときに覚えた、パスワードの秘密鍵。vault（取り出せない AES の鍵）で暗号化したバイト列から X25519 の鍵へ戻す（#219：Safari）。
+ * 前の形（X25519 の鍵そのもの）で覚えたものも読む
+ */
+async function storedAuth(base: string): Promise<CryptoKey | null> {
+  const record = await storedRecord(base);
+  if (!record) return null;
+  if (record.auth instanceof CryptoKey) return record.auth;
+  if (!(record.vault instanceof CryptoKey) || !(record.authIv instanceof Uint8Array) || !(record.authData instanceof Uint8Array)) return null;
   try {
-    const bytes = new Uint8Array(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: new Uint8Array(wrapped.iv), additionalData: new TextEncoder().encode('react-maker-preview-auth-v1') }, value.key, wrapped.data));
-    try { return await crypto.subtle.importKey('pkcs8', bytes, { name: 'X25519' }, false, ['deriveBits']); }
-    finally { bytes.fill(0); }
+    const subtle = globalThis.crypto.subtle;
+    // 写しを作り、ArrayBuffer の上の配列にする（BufferSource の型に合わせる）
+    const pkcs8 = await subtle.decrypt({ name: 'AES-GCM', iv: new Uint8Array(record.authIv) }, record.vault, new Uint8Array(record.authData));
+    return await subtle.importKey('pkcs8', pkcs8, { name: 'X25519' }, false, ['deriveBits']);
   } catch { return null; }
 }
 

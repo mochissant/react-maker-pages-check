@@ -140,30 +140,23 @@ export function lockPage(base) {
 ${[passwordKeyPair, unlockWithAuth].map(String).join('\n')}
 const base = ${JSON.stringify(base)};
 const message = document.getElementById('rm-message');
-function store({ key, authWrapped }) {
+function keys(mode, work) {
   return new Promise((resolve, reject) => {
     const request = indexedDB.open('rm-lock', 1);
     request.onupgradeneeded = () => request.result.createObjectStore('keys');
     request.onerror = () => reject(request.error);
     request.onsuccess = () => {
-      const db = request.result;
-      const transaction = db.transaction('keys', 'readwrite');
-      transaction.objectStore('keys').put({ key, authWrapped, expires: Date.now() + 7 * 24 * 60 * 60 * 1000 }, base);
-      transaction.oncomplete = () => {
-        // 保存に成功したように見えても読み戻せない場合は、再読み込みのループにしない。
-        const get = db.transaction('keys').objectStore('keys').get(base);
-        get.onsuccess = () => {
-          db.close();
-          if (get.result?.key && get.result?.authWrapped) resolve();
-          else reject(Object.assign(new Error('storage'), { name: 'DataCloneError' }));
-        };
-        get.onerror = () => { db.close(); reject(get.error); };
-      };
-      transaction.onerror = () => { db.close(); reject(transaction.error); };
-      transaction.onabort = () => { db.close(); reject(transaction.error); };
+      const transaction = request.result.transaction('keys', mode);
+      const result = work(transaction.objectStore('keys'));
+      transaction.oncomplete = () => resolve(result.result);
+      transaction.onerror = () => reject(transaction.error);
     };
   });
 }
+// 覚えるのは、取り出せない AES の鍵とバイト列だけ（X25519 の鍵そのものは、Safari では読み戻せない。#219）。
+// authData：パスワードの秘密鍵を vault で暗号化したもの。コメントを書くときの証明に使う（Issue #275）
+const store = ({ key, vault, authIv, authData }) => keys('readwrite', (objects) => objects.put({ key, vault, authIv, authData, expires: Date.now() + 7 * 24 * 60 * 60 * 1000 }, base));
+const stored = () => keys('readonly', (objects) => objects.get(base));
 document.getElementById('rm-lock').addEventListener('submit', async (event) => {
   event.preventDefault();
   const button = event.currentTarget.querySelector('button');
@@ -173,14 +166,15 @@ document.getElementById('rm-lock').addEventListener('submit', async (event) => {
     if (!globalThis.crypto?.subtle || !('serviceWorker' in navigator) || !globalThis.indexedDB) throw Object.assign(new Error('unsupported'), { name: 'NotSupportedError' });
     const sealed = await (await fetch(base + '__rm-lock/lock.json', { cache: 'no-store' })).json();
     await store(await unlockWithAuth(document.getElementById('rm-password').value, sealed));
+    // 覚えた鍵を読み戻せなければ、開き直しても同じ画面に戻るだけなので、開き直さずに知らせる
+    const saved = await stored().catch(() => null);
+    if (!saved || !(saved.key instanceof CryptoKey)) throw Object.assign(new Error('not stored'), { name: 'StorageError' });
     await navigator.serviceWorker.register(base + 'rm-lock-sw.js', { scope: base });
     await navigator.serviceWorker.ready;
     location.reload();
   } catch (error) {
     message.textContent = error.name === 'NotSupportedError' ? 'このブラウザでは開けません。最新の Chrome・Edge・Firefox・Safari で開いてください。'
-      : error.name === 'DataCloneError' ? 'このブラウザで鍵を保存できませんでした。別のブラウザで開いてください。'
-      : error.name === 'OperationError' ? 'パスワードが違います。'
-      : 'ページを開く準備ができませんでした。もう一度「開く」を押してください。';
+      : error.name === 'StorageError' ? 'このブラウザに鍵を覚えられませんでした。プライベートブラウズを止めるか、別のブラウザで開いてください。' : 'パスワードが違います。';
     button.disabled = false;
   }
 });
